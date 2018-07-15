@@ -30,7 +30,7 @@ bot.on('message', message => {
         if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
             const hembed = new Discord.RichEmbed()
                 .setColor(`RANDOM`)
-                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a Sweet COOKIE:cookie: :blobnomcookie: !!! `)
+                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a Sweet COOKIE:cookie: !!! `)
                 .setImage(cookie[hugresult])
                 .setTimestamp()
             message.channel.send({
