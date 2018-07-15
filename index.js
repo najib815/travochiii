@@ -9,19 +9,6 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.split(" ").slice(1);
 
-    if (msg.startsWith(prefix + 'test')) {
-        let test = [
-            "test 1",
-            "test 2",
-            "test 3",
-        ]
-        let tstresult = Math.floor((Math.random() * test.length));
-        const hembed = new Discord.RichEmbed()
-                .setDescription(test[tstresult])
-                .setTimestamp()
-                message.channel.send({embed: hembed
-                })
-    }
 
     if (msg.startsWith(prefix + 'COOKIE')) {
         let cookie = [
@@ -210,4 +197,4 @@ bot.on('ready', () => {
     bot.user.setActivity('PornHub !')
 })
 
-bot.login('NDY1NjUyNTI5NDg5NzcyNTU0.DiQqFQ.Ikg2fuVqd3PYExxaVAHnHSfcXrQ');
+bot.login(process.env.TOKEN);
