@@ -178,8 +178,9 @@ bot.on('message', message => {
         const embed = new Discord.RichEmbed()
   //.setTitle("This is your title, it can hold 256 characters")
   //.setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
-  .setField("Welcome to `саιм` :new_moon: server !", "Join us for talks about anything you like, especially if it is Anime, Manga, Games..."               
-                  )
+  .addField("Welcome to `саιм` :new_moon: server !",
+            "Join us for talks about anything you like, especially if it is Anime, Manga, Games...")             
+                  
   .setColor(10689358)
   .setImage("https://cdn.discordapp.com/attachments/467098687915425794/467107224653791232/2bc068a85f9e1c5aaca47c929d44219c.jpg")
   .setTimestamp()
