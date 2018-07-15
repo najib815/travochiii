@@ -9,6 +9,28 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.split(" ").slice(1);
     
+    if (msg === prefix + 'RULESTEST') {
+        
+        const embed = new Discord.RichEmbed()
+  .setTitle(":ribbon:Rules:ribbon:")
+  .setDescription("We are fine with any content that makes its way into the server.  However, we ask that if you want to post adult content of ANY type please use the ```#nsfw``` text channel.  The general channel is used for general talk between all members.")
+  //.setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .addField(":small_orange_diamond:️No racism or racial discrimination of any type")
+  .setColor(0xFF0000)
+  //.setImage("https://cdn.discordapp.com/attachments/467098687915425794/467107224653791232/2bc068a85f9e1c5aaca47c929d44219c.jpg")
+  .setTimestamp()
+
+  message.channel.send({embed});
+        
+    };
+    
     if (msg.startsWith(prefix + 'NOM')) {
         let nom = [
             "https://pa1.narvii.com/6412/817cca674a16306beabb40f1bc42a7b5ef9a4191_hq.gif",
