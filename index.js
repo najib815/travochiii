@@ -20,7 +20,7 @@ bot.on('message', message => {
     
     try {
         let commandFile = require(`./commands/${cmd}.js`); 
-        commandFile.run(bot, message, args, func); 
+        commandFile.run(bot, message, args); 
     } catch(e) { 
         console.log(e.message);
     } finally {
