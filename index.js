@@ -10,7 +10,7 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.split(" ").slice(1);
     
-    if (msg.startsWith(prefix + 'PING4)) {
+    if (msg.startsWith(prefix + 'PING4')) {
         message.channel.send('Pong...').then((msg) => {
     msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
               })
