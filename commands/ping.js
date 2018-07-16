@@ -1,6 +1,6 @@
 exports.run = (bot, message, args) => {
-    msg.channel.send(':watch: | Ping!').then(m => {
-        m.edit(`:watch: | Pong! \`${m.createdTimestamp - msg.createdTimestamp}ms\``);
+    message.channel.send(':watch: | Ping!').then(m => {
+        m.edit(`:watch: | Pong! \`${m.createdTimestamp - message.createdTimestamp}ms\``);
     });
 };
 
