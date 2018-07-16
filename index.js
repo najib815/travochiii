@@ -11,9 +11,9 @@ bot.on('message', message => {
     let args = message.content.split(" ").slice(1);
     
     if (msg.startsWith(prefix + 'PING4)) {
-                       message.channel.send('Pong...').then((msg) => {
+        message.channel.send('Pong...').then((msg) => {
     msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-});
+              })
         }
     
     if (msg.startsWith(prefix + 'NOM')) {
