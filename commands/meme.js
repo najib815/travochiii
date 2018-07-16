@@ -1,8 +1,8 @@
 const color = [0x7d5bbe, 0xa3d3fe, 0x333333, 0x007acc, 0xf56154,  0xdc3522]
-const snek = require("snekfetch");
+const snekfetch = require("snekfetch");
 
 exports.run = async (bot ,message) => {
-	const res = await bot.snek.get('https://www.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500')
+	const res = await bot.snekfetch.get('https://www.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500')
 	const posts = res.body.data.children.filter(post => post.data.preview)
 
 	if (!bot.indexes.meme[message.channel.guild.id] || bot.indexes.meme[message.channel.guild.id] >= posts.length) {
