@@ -1,5 +1,5 @@
 const color = [0x7d5bbe, 0xa3d3fe, 0x333333, 0x007acc, 0xf56154,  0xdc3522]
-const snek = require("snekfetch")
+const snek = require("snekfetch");
 
 exports.run = async (bot ,message) => {
 	const res = await bot.snek.get('https://www.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500')
