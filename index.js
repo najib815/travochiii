@@ -69,7 +69,7 @@ bot.on('message', message => {
         if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
             const hembed = new Discord.RichEmbed()
                 .setColor(`RANDOM`)
-                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a Sweet COOKIE:cookie: !!! `)
+                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a Sweet COOKIE :cookie: !!! `)
                 .setImage(cookie[hugresult])
                 .setTimestamp()
             message.channel.send({
@@ -120,7 +120,7 @@ bot.on('message', message => {
         if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
             const hembed = new Discord.RichEmbed()
                 .setColor(`RANDOM`)
-                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a sweet kiss:heart_eyes: :heart_eyes: :heart_eyes:  ! `)
+                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a sweet kiss 😍😍😍  ! `)
                 .setImage(kiss[hugresult])
                 .setTimestamp()
             message.channel.send({
@@ -167,7 +167,7 @@ bot.on('message', message => {
         if (!args[0]) {
             const ghembed = new Discord.RichEmbed()
                 .setColor(0xFF0000)
-                .setTitle(`${message.author.username} need a hug ! hug him please :crying_cat_face: :crying_cat_face: :crying_cat_face: :crying_cat_face: `)
+                .setTitle(`${message.author.username} need a hug ! hug him please ...😿😿 `)
                 .setImage('https://media3.giphy.com/media/ArLxZ4PebH2Ug/giphy.gif')
                 .setTimestamp()
             message.channel.send({
@@ -178,7 +178,7 @@ bot.on('message', message => {
         if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
             const hembed = new Discord.RichEmbed()
                 .setColor(0xFF0000)
-                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a lovely hug!:heart_eyes: :heart_eyes: :heart_eyes:`)
+                .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a lovely hug! 😍😍😍`)
                 .setImage(hug[hugresult])
                 .setTimestamp()
             message.channel.send({
@@ -188,7 +188,7 @@ bot.on('message', message => {
         }
         const ghembed = new Discord.RichEmbed()
             .setColor(0xFF0000)
-            .setTitle(`${message.author.username} need a hug ! hug him please :crying_cat_face: :crying_cat_face: :crying_cat_face: :crying_cat_face: `)
+            .setTitle(`${message.author.username} need a hug ! hug him please ...😿😿😿 `)
             .setImage('https://media3.giphy.com/media/ArLxZ4PebH2Ug/giphy.gif')
             .setTimestamp()
         message.channel.send({
