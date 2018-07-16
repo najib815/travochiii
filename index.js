@@ -29,7 +29,7 @@ bot.on('message', message => {
     
     if (msg.startsWith(prefix + '8BALL')) {
       if ( msg.endsWith('?')) {
-      const answer = [
+      let answers = [
       'Maybe.', 'Lol no.', 'I really hope so.', 'Not in your wildest dreams.',
       'There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.',
       'I hope so.', 'Wtf no!', 'Fuhgeddaboudit.', 'Ahaha! Really?!?', 'Pfft.',
@@ -40,7 +40,7 @@ bot.on('message', message => {
     } else {
       message.channel.sendMessage('Is that a question?')
     }
-  message.channel.sendMessage(answer);
+  message.channel.sendMessage(answers[answer]);
 }
     
     if (msg.startsWith(prefix + 'NOM')) {
