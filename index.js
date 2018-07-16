@@ -8,24 +8,6 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.split(" ").slice(1);
   
-  exports.run = (bot, msg, args) => {
-  msg.delete();
-  msg.channel.send("Ping?").then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - msg.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`) );
-};
-
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0
-};
-
-exports.help = {
-  name: 'ping',
-  description: 'It... like... pings. Then Pongs. And it\'s not Ping Pong.',
-  usage: 'ping'
-};
-    
     
     if (msg.startsWith(prefix + 'NOM')) {
         let nom = [
