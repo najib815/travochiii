@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "snekfetch": "^3.1.11",
     "weather-js": "^2.0.0",
     "weather.js": "^0.1.0"
   }
