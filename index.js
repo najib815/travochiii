@@ -3,35 +3,29 @@ const bot = new Discord.Client();
 const prefix = ';!';
 //const fetch = require('snekfetch');
 const fs = require("fs");
-bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
-
-  if(err) console.log(err);
-
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
-  });
-
-});
 
 
 
 bot.on('message', message => {
     let msg = message.content.toUpperCase();
     let sender = message.author;
-    let args = message.content.split(" ").slice(1);
+    let args = message.content.slice(prefix.length).trim().split(" ");
+    let cmd = args.shift().toLowerCase(); 
+
     
-    let commandfile = bot.commands.get(msg.slice(prefix.length));
-    if(commandfile) commandfile.run(bot,message,args);
+    if (sender.bot) return;
+    if (!message.content.startsWith(prefix)) return; 
+
+    
+    try {
+        let commandFile = require(`./commands/${cmd}.js`); 
+        commandFile.run(bot, message, args, func); 
+    } catch(e) { 
+        console.log(e.message);
+    } finally {
+        console.log(`${message.author.username} ran the command: ${cmd}`);
+    }
     
     
     
