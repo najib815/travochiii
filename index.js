@@ -1,6 +1,20 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = ';!';
+const fetch = require('snekfetch');
+
+const emoji = ['🤣', '👅', '😱', '😆', '😂'];
+module.exports.run = async (bot, message) => {
+    fetch.get('https://api.apithis.net/yomama.php').then(joe => {
+        const joke = new Discord.RichEmbed()
+    .addField(`${emoji[~~(Math.random() * emoji.length)]}`, joe.body);
+        message.channel.send({embed: joke}).catch(e => logger.error(e));
+    })
+  .catch(e => logger.error(e));
+};
+module.exports.help = {
+    name: 'yomama'
+};
 
 
 bot.on('message', message => {
