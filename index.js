@@ -29,7 +29,7 @@ bot.on('message', message => {
     
     if (msg.startsWith(prefix + '8BALL')) {
       if ( msg.endsWith('?')) {
-      const answers = [
+      const answer = [
       'Maybe.', 'Lol no.', 'I really hope so.', 'Not in your wildest dreams.',
       'There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.',
       'I hope so.', 'Wtf no!', 'Fuhgeddaboudit.', 'Ahaha! Really?!?', 'Pfft.',
