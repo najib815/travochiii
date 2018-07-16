@@ -27,7 +27,21 @@ bot.on('message', message => {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
     
-    
+    if (msg.startsWith(prefix + '8BALL')) {
+      if ( msg.endsWith('?')) {
+      const answers = [
+      'Maybe.', 'Lol no.', 'I really hope so.', 'Not in your wildest dreams.',
+      'There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.',
+      'I hope so.', 'Wtf no!', 'Fuhgeddaboudit.', 'Ahaha! Really?!?', 'Pfft.',
+      'Sorry, bby.', 'fuck, yes.', 'Hell to the no.', 'ehhhhhh, i dont know.',
+      'The future is uncertain.', 'I would rather not say.', 'Who cares?',
+      'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
+      const answer = answers[Math.floor(Math.random() * answers.length)];
+    } else {
+      message.channel.sendMessage('Is that a question?')
+    }
+  message.channel.sendMessage(answer);
+}
     
     if (msg.startsWith(prefix + 'NOM')) {
         let nom = [
