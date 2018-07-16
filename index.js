@@ -3,8 +3,12 @@ const bot = new Discord.Client();
 const prefix = ';!';
 
 
-
-exports.run = (bot, msg, args) => {
+bot.on('message', message => {
+    let msg = message.content.toUpperCase();
+    let sender = message.author;
+    let args = message.content.split(" ").slice(1);
+  
+  exports.run = (bot, msg, args) => {
   msg.delete();
   msg.channel.send("Ping?").then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - msg.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`) );
 };
@@ -21,11 +25,6 @@ exports.help = {
   description: 'It... like... pings. Then Pongs. And it\'s not Ping Pong.',
   usage: 'ping'
 };
-
-bot.on('message', message => {
-    let msg = message.content.toUpperCase();
-    let sender = message.author;
-    let args = message.content.split(" ").slice(1);
     
     
     if (msg.startsWith(prefix + 'NOM')) {
