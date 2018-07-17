@@ -6,8 +6,10 @@ exports.run = (bot, message, args) => {
     if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
 
     const subreddits = [
-        'HENTAI_GIF',
-        'hentai'
+        'AnimeHentaiGifs',
+        'hentai_gifs_animated',
+        'FauxHentai',
+        'hentai-gifs'
     ]
     const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
