@@ -5,12 +5,6 @@ exports.run = async function (bot, message) {
 	const res = await snekfetch.get('https://www.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500')
 	const posts = res.body.data.children.filter(post => post.data.preview)
 
-	if (!bot.indexes.meme[message.channel.guild.id] || bot.indexes.meme[message.channel.guild.id] >= posts.length) {
-		bot.indexes.meme[message.channel.guild.id] = 1
-	}
-
-	const post = posts[bot.indexes.meme[message.channel.guild.id]]
-	bot.indexes.meme[message.channel.guild.id]++
 
 	await message.channel.createMessage({ embed: {
 		title: post.data.title,
