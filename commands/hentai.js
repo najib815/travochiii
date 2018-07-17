@@ -7,7 +7,7 @@ exports.run = (bot, message, args) => {
 
     const subreddits = [
         'HENTAI_GIF',
-        'hentai_irl'
+        'hentai'
     ]
     const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
