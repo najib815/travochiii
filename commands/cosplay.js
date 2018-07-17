@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
         .then(url => {
             request.get(url).then(r => {
                 fs.writeFile(`cosplay.jpg`, r.body)
-                message.channel.send(r.body)
+                message.channel.sendFile(r.body)
                 fs.unlink(`./cosplay.jpg`)
             })
         })
