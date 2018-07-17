@@ -36,11 +36,11 @@ bot.on('message', message => {
       'Sorry, bby.', 'fuck, yes.', 'Hell to the no.', 'ehhhhhh, i dont know.',
       'The future is uncertain.', 'I would rather not say.', 'Who cares?',
       'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
-      const answer = answers[Math.floor(Math.random() * answers.length)];
+      let answer = Math.floor[(Math.random() * answers.length)];
     } else {
-      message.channel.sendMessage('Is that a question?')
+      message.channel.send('Is that a question?')
     }
-  message.channel.sendMessage(answers[answer]);
+  message.channel.send(answers[answer]);
 }
     
     if (msg.startsWith(prefix + 'NOM')) {
