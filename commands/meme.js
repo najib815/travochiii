@@ -7,7 +7,7 @@ exports.run = async function (bot, message) {
 
 
 	await message.channel.createMessage({ embed: {
-		title: posts.data.title,
+		
 		color: color[Math.floor(Math.random() * color.length)],
 		url: posts.data.url,
 		image: { url: posts.data.preview.images[0].source.url },
