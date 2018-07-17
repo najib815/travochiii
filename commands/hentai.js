@@ -14,9 +14,9 @@ exports.run = (bot, message, args) => {
     randomPuppy(sub)
         .then(url => {
             request.get(url).then(r => {
-                fs.writeFile(`hentai.jpg`, r.body)
+                fs.writeFile(`hentai.gif`, r.body)
                 message.channel.sendFile(r.body)
-                fs.unlink(`./hentai.jpg`)
+                fs.unlink(`./hentai.gif`)
             })
         })
 }
