@@ -10,7 +10,7 @@ exports.run = (bot, message, args) => {
         randomPuppy('HENTAI_GIF')
             .then(url => {
                 const embed = new Discord.RichEmbed()
-                    .setTitle("Here is some...NYYAAAAA UwU")  
+                    .setDescription('Here is some...NYYAAAAA UwU(${url})')  
                     .setImage(url)
                     .setColor(0xffa500);
                 return message.channel.send({ embed });
