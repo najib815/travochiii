@@ -21,7 +21,7 @@ exports.run = (bot, message, args) => {
                 const embed = new Discord.RichEmbed()
                     .setTitle("Here is Some...NYYAAAA UwU !!")
                     .setColor(0xffa500)
-                    .setImage(url)
+                    .setImage(r.body)
                 message.channel.send({ embed });
        
    
