@@ -12,13 +12,16 @@ exports.run = (bot, message, args) => {
         'hentai-gifs'
     ]
     const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
-
+    
+    
     randomPuppy(sub)
-        .then(url => {
-            request.get(url).then(r => {
-                fs.writeFile(`hentai.gif`, r.body)
-                message.channel.sendFile(r.body)
-                fs.unlink(`./hentai.gif`)
+            .then(url => {
+                const embed = new Discord.RichEmbed()
+                    .setColor(0xffa500)
+                    .setImage(url)
+                message.channel.send({ embed });
+       
+   
             })
         })
 }
