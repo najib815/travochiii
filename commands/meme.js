@@ -7,11 +7,11 @@ exports.run = async function (bot, message) {
 
 
 	await message.channel.createMessage({ embed: {
-		title: post.data.title,
+		title: posts.data.title,
 		color: color[Math.floor(Math.random() * color.length)],
-		url: post.data.url,
-		image: { url: post.data.preview.images[0].source.url },
-		description: post.data.url,
-		footer: { text: `posted by ${post.data.author}` }
+		url: posts.data.url,
+		image: { url: posts.data.preview.images[0].source.url },
+		description: posts.data.url,
+		footer: { text: `posted by ${posts.data.author}` }
 	}})
 }
