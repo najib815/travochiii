@@ -7,12 +7,10 @@ const fs = require("fs")
 exports.run = (bot, message, args) => {
    if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
 
-        randomPuppy('HENTAI_GIF')
-            .then(url => {
-                const embed = new Discord.RichEmbed()
-                    .setImage(url)
-                    .setColor(0xffa500);
-                return message.channel.send({ embed });
+         request.get("https://nekobot.xyz/api/image?type=hentai").then(r => {
+                fs.writeFile(`hentai.jpg`, r.body)
+                message.channel.sendFile(r.body)
+                fs.unlink(`./hentai.jpg`)
 })
         
 }
