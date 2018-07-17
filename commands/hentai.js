@@ -9,9 +9,7 @@ exports.run = (bot, message, args) => {
 
     const subreddits = [
         'AnimeHentaiGifs',
-        'hentai_gifs_animated',
-        'FauxHentai',
-        'hentai-gifs'
+        'hentai_gifs_animated'
     ]
     const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
     
@@ -21,7 +19,7 @@ exports.run = (bot, message, args) => {
                 const embed = new Discord.RichEmbed()
                     .setTitle("Here is Some...NYYAAAA UwU !!")
                     .setColor(0xffa500)
-                    .setImage(r.body)
+                    .setImage(url)
                 message.channel.send({ embed });
        
    
