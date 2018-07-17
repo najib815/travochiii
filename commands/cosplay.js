@@ -7,7 +7,6 @@ exports.run = (bot, message, args) => {
 
     const subreddits = [
         'nsfwcosplay',
-        'cosplayonoff',
         'cosporn',
         'cosplayboobs'
     ]
