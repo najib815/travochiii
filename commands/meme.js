@@ -1,23 +1,22 @@
-const color = [0x7d5bbe, 0xa3d3fe, 0x333333, 0x007acc, 0xf56154,  0xdc3522]
-const snekfetch = require("snekfetch");
+const subs = ['memes', 'me_irl', 'funny'];
+const sortings = ['new', 'top', 'controversial'];
 
-exports.run = async (bot ,message) => {
-	const res = await bot.snekfetch.get('https://www.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500')
-	const posts = res.body.data.children.filter(post => post.data.preview)
+module.exports = {
+	description: 'Sends a random meme',
+	category: 'Fun',
+	cooldown: 5000,
+	run: async function (message) {
+		const response = await this.request(`https://www.reddit.com/r/${subs[Math.floor(Math.random() * subs.length)]}/${sortings[Math.floor(Math.random() * sortings.length)]}.json`),
+			body = JSON.parse(response.body),
+			children = body.data.children,
+			childData = children[Math.floor(Math.random() * children.length)].data,
+			imageURL = childData.preview.images[0].source.url;
 
-	if (!bot.indexes.meme[message.channel.guild.id] || bot.indexes.meme[message.channel.guild.id] >= posts.length) {
-		bot.indexes.meme[message.channel.guild.id] = 1
+		message.channel.send(`Title: \`${childData.title}\`\nPosted by \`/u/${childData.author}\` in \`/${childData.subreddit_name_prefixed}\``, {
+			files: [{
+				attachment: imageURL,
+				name: 'meme.png'
+			}]
+		});
 	}
-
-	const post = posts[bot.indexes.meme[message.channel.guild.id]]
-	bot.indexes.meme[message.channel.guild.id]++
-
-	await message.channel.createMessage({ embed: {
-		title: post.data.title,
-		color: color[Math.floor(Math.random() * color.length)],
-		url: post.data.url,
-		image: { url: post.data.preview.images[0].source.url },
-		description: post.data.url,
-		footer: { text: `posted by ${post.data.author}` }
-	}})
-}
+};
