@@ -8,7 +8,7 @@ module.exports = {
 	cooldown: 5000,
 	run: async function (message) {
 		const response = await snekfetch.get(`https://www.reddit.com/r/${subs[Math.floor(Math.random() * subs.length)]}/${sortings[Math.floor(Math.random() * sortings.length)]}.json`),
-			body = JSON.parse(response.body),
+			body = (r.body),
 			children = body.data.children,
 			childData = children[Math.floor(Math.random() * children.length)].data,
 			imageURL = childData.preview.images[0].source.url;
