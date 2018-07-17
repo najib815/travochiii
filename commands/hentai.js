@@ -5,11 +5,7 @@ const fs = require("fs")
 
 
 exports.run = (bot, message, args) => {
-   var errMessage = errors[Math.round(Math.random() * (errors.length - 1))];
-        if (!message.channel.nsfw) {
-            message.react('💢');
-            return message.channel.send(errMessage);
-        }
+   if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
 
         randomPuppy('HENTAI_GIF')
             .then(url => {
