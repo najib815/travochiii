@@ -5,24 +5,20 @@ const fs = require("fs")
 
 
 exports.run = (bot, message, args) => {
-    if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
+   var errMessage = errors[Math.round(Math.random() * (errors.length - 1))];
+        if (!message.channel.nsfw) {
+            message.react('💢');
+            return message.channel.send(errMessage);
+        }
 
-    const subreddits = [
-        'AnimeHentaiGifs',
-        'hentai_gifs_animated'
-    ]
-    const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
-    
-    
-    randomPuppy(sub)
+        randomPuppy('HENTAI_GIF')
             .then(url => {
                 const embed = new Discord.RichEmbed()
-                    .setTitle("Here is Some...NYYAAAA UwU !!")
-                    .setColor(0xffa500)
+                    .setFooter(`hentai.gif`)
+                    .setDescription(`[Image URL](${url})`)   
                     .setImage(url)
-                message.channel.send({ embed });
-       
-   
-            })
+                    .setColor('#A187E0');
+                return message.channel.send({ embed });
+})
         
 }
