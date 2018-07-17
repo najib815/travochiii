@@ -16,11 +16,11 @@ module.exports = {
        .setDescription(`${message.member.user.username} is ${randomnumber}% gay! :gay_pride_flag:`)
        .setColor(0x2471a3)
        .setTimestamp()
-       .setFooter(${bot.user.avatarURL})
+       .setFooter(${bot.user.avatarURL});
     
     
     message.channel.send({embed});
 
 
   },
-};
+});
