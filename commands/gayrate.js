@@ -1,3 +1,5 @@
+const Discord = require("discord.js");
+
 module.exports = {
   // Information
   name: 'gayrate',
@@ -7,24 +9,18 @@ module.exports = {
   // Function
   run: (bot, message, args) => {
     const randomnumber = Math.floor(Math.random() * 101);
-    message.channel.send({
-      embed: {
-        author: {
-          name: bot.user.username,
-          icon_url: bot.user.avatarURL,
-        },
-        title: 'Scanning...',
-        thumbnail: {
-          url: message.author.avatarURL,
-        },
-        description: `${message.member.user.username} is ${randomnumber}% gay! :gay_pride_flag:`,
-        color: 0x2471a3,
-        timestamp: new Date(),
-        footer: {
-          icon_url: bot.user.avatarURL,
-          text: bot.config.embed.footer,
-        },
-      },
-    });
+    const embed = new Discord.RichEmbed()
+       .setAuthor(${bot.user.username}, ${bot.user.avatarURL})
+       .setTitle("Scanning...")
+       .setThumbnail(${message.author.avatarURL})
+       .setDescription(`${message.member.user.username} is ${randomnumber}% gay! :gay_pride_flag:`)
+       .setColor(0x2471a3)
+       .setTimestamp()
+       .setFooter(${bot.user.avatarURL})
+    
+    
+    message.channel.send({embed});
+
+
   },
 };
