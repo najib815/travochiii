@@ -1,25 +1,23 @@
-const { get } = require("snekfetch");
+const Discord = require("discord.js");
+const superagent = require("superagent");
 
+module.exports.run = async(bot, message, args) => {
+    
+    let {body} = await superagent
+    .get(`https://nekos.life/api/v2/img/cum`);
+    if (!message.channel.nsfw) return message.reply(" You must be in a N.S.F.W channel to use this command.");
+  
+    let hentaiEmbed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("I-I'm Cummiing :sweat_drops: :sweat_drops: ")
+    .setImage(body.url)
+    .setColor("RANDOM")
+    .setFooter(`Requested by ${message.author.tag} | Powered by Nekos.life`);
 
-  async run(bot, message, args) { // eslint-disable-line no-unused-vars
-    if (!message.channel.nsfw) return message.response("🔞", "Cannot display NSFW content in a SFW channel.");
+    message.channel.send(hentaiEmbed);
 
-    const { body } = await get("https://nekos.life/api/v2/img/cum");
-    await message.channel.edit({
-      embed: {
-        "title": "Click here if the image failed to load.",
-        "url": body.url,
-        "color": 6192321,
-        "image": {
-          "url": body.url
-        },
-        "footer": {
-          "icon_url": message.author.displayAvatarURL({ format: "png", size: 32 }),
-          "text": `Requested by ${message.author.tag} | Powered by Nekos.life API`
-        }
-      }
-    });
-  }
 }
 
-module.exports = HCum;
+module.exports.help = {
+    name: "hcum"
+}
