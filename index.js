@@ -211,7 +211,7 @@ bot.on('ready', () => {
     console.log('I AM READY !')
     
     bot.user.setStatus('dnd')
-    bot.user.setActivity('PornHub !')
+    bot.user.setActivity('With Sally and Travochi')
 })
 
 bot.login(process.env.TOKEN);
