@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (bot, message, args) => {
 
 randomPuppy('memes')
     .then(url => {
