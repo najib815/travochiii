@@ -11,7 +11,7 @@ module.exports.run = (bot, message, args) => {
   }
 
   else if (status.length !== 0) {
-   bot.user.setPresence({ game: { name: `${status}`, url: 'https://twitch.tv/hellcat', type: 1 } });
+   bot.user.setPresence({ game: { name: `${status}`, url: 'https://www.twitch.tv/najib815', type: 1 } });
   const embed = new Discord.RichEmbed()
     .setColor("#7289DA")
     .setDescription(':white_check_mark: You sucessfully changed streaming status');
