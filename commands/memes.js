@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
-module.exports.run = (message) => {
+module.exports.run = (bot, message) => {
 
 randomPuppy('memes')
     .then(url => {
@@ -10,5 +10,5 @@ randomPuppy('memes')
             .setImage(url)
             .setColor('RANDOM')
         message.channel.send(embed);
-    });
-    }
+    })
+}
