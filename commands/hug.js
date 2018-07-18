@@ -16,7 +16,7 @@ module.exports.run = async(bot, message, args) => {
     .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a lovely hug! 😍😍😍`)
     .setImage(body.url)
     .setColor("RANDOM")
-    .setFooter("Never let a fool kiss you, or a kiss fool you.");
+    .setFooter("What a warm hug..");
 
     message.channel.send(hentaiEmbed);
     return;
