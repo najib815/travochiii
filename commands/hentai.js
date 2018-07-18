@@ -1,16 +1,23 @@
-const Discord = require('discord.js');
-const randomPuppy = require('random-puppy');
-const request = require('snekfetch');
-const fs = require("fs")
+onst Discord = require("discord.js");
+const superagent = require("superagent");
 
+module.exports.run = async(bot, message, args) => {
+    
+    let {body} = await superagent
+    .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
+    if (!message.channel.nsfw) return message.reply(" You must be in a N.S.F.W channel to use this command.");
+  
+    let hentaiEmbed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("Here is Some...NYAAAA UwU")
+    .setImage(body.url)
+    .setColor("RANDOM")
+    .setFooter("By Trav Bot");
 
-exports.run = (bot, message, args) => {
-   if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
+    message.channel.send(hentaiEmbed);
 
-         request.get("https://nekobot.xyz/api/image?type=hentai").then(r => {
-                fs.writeFile(`hentai.jpg`, r.body)
-                message.channel.sendFile(r.body)
-                fs.unlink(`./hentai.jpg`)
-})
-        
+}
+
+module.exports.help = {
+    name: "hentai"
 }
