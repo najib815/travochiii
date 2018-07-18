@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
     .setTitle("Here is Some...NYAAAA UwU")
     .setImage(body.url)
     .setColor("RANDOM")
-    .setFooter("By Trav Bot");
+    .setFooter(`Requested by ${message.author.tag} | Powered by Nekos.life`);
 
     message.channel.send(hentaiEmbed);
 
