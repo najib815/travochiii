@@ -9,10 +9,10 @@ module.exports.run = async(bot, message, args) => {
   
     let feetEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("Here is Some...NYAAAA UwU")
+    .setTitle("Here is Some Real SOFT FEET.. UwU")
     .setImage(body.url)
     .setColor("RANDOM")
-    .setFooter("By Trav Bot");
+    .setFooter(`${message.author.username} Licc them UwU`);
 
     message.channel.send(feetEmbed);
 
