@@ -21,7 +21,7 @@ module.exports.run = async(bot, message, args) => {
     message.channel.send(hentaiEmbed);
     return;
         }
-        message.channel.send(`Mention who you want to pat \n pat <user>`)
+        message.channel.send("```Mention who you want to pat \n*pat <user>```")
 } 
 
 
