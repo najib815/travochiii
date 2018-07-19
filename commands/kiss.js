@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle(`**${message.author.username}** **Kissed** **${message.mentions.members.first().user.username}** 😍😍😍 !`)
+    .setTitle(`**${message.author.username}** **Kissed** **${message.mentions.members.first().user.username}** ♥‿♥ !`)
     .setImage(body.url)
     .setColor("RANDOM")
     .setFooter("Never let a fool kiss you, or a kiss fool you.");
