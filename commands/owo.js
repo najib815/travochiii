@@ -5,7 +5,7 @@ const { get } = require("snekfetch");
     const { body } = await get("https://rra.ram.moe/i/r?type=owo");
     let embed = new Discord.RichEmbed() 
         .setTitle("OwO")
-        .setImage(`https://cdn.ram.moe/${body.path.replace("/i/", "")}` 
+        .setImage(`https://cdn.ram.moe/${body.path.replace("/i/", "")}`) 
         .setColor("RANDOM") 
         .setFooter(`Requested by ${message.author.tag}`)
         .setTimestamp()
