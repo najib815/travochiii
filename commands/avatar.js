@@ -20,6 +20,7 @@ exports.run = async (bot, message, args) => {
         .setAuthor(`${user.username}'s Avatar`) //HERE WE SHOW THE USER'S NAME!
         .setImage(user.displayAvatarURL) // USER'S AVATAR
         .setColor("RANDOM") //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
+        .setFooter(randomfooter)
         .setTimestamp(); //SHOWS THAT COOL TIME ON THE FOOTER!
 
     await message.channel.send(embed) //NOW WE GIVE IT SOMETIME TO DO ALL THE CRAZY STUFF ON TOP AND THEN SEND THE EMBED!
