@@ -4,7 +4,7 @@ const superagent = require("superagent");
 module.exports.run = async(bot, message, args) => {
     
     let {body} = await superagent
-    .get(`https://nekos.life/api/hug`);
+    .get(`https://nekos.life/api/v2/img/cuddle`);
     if (!args[0]) {
             message.channel.send("```Mention Who You Want To Hug  First !!!```")
             return;
