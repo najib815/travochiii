@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { get } = require("snekfetch");
  
- module.exports.run = async (message, args, bot) => {
+ module.exports.run = async (bot, message, args) => {
     if (!message.mentions.members.size) return message.response(undefined, "Ba-Baka! How will I tell you, how much you love someone. If I don't know who!"); 
   
     const data = await get(`https://love-calculator.p.mashape.com/getPercentage?fname=${message.member.displayName}&sname=${message.mentions.members.first().displayName}`).set("X-Mashape-Key", process.env.MASHAPE);
