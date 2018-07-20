@@ -11,16 +11,16 @@ exports.run = async (bot, message) => {
             .setAuthor(message.author.username) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
             .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
-            .setImage(message.author.avatarURL()) //Add Any Image URl || Image
-            .setThumbnail(message.author.avatarURL()) //Add Any Image URl || ThumbNail
+            .setImage(user.displayAvatarURL) //Add Any Image URl || Image
+            .setThumbnail(user.displayAvatarURL) //Add Any Image URl || ThumbNail
 
             //All Feilds Are Just Examples pick Some & add as you like
 
             .addField('Avatar', message.author.avatar, true) //The ID of the user's avatar //Inline True or false
-            .addField('AvatarURL', message.author.avatarURL({
+            .addField('AvatarURL', user.displayAvatarURL({
                 format: 'png'
             }), true) //{options} options are Size?: 128 | 256 | 512 | 1024 | 2048, Format?: "webp" | "png" | "jpg" | "gif" //.defaultAvatarURL() A link to the user's default avatar //.displayAvatarURL() A link to the user's avatar if they have one. Otherwise a link to their default avatar will be returned
-            .addField('AvatarURL', message.author.avatarURL({
+            .addField('AvatarURL', user.displayAvatarURL({
                 size: '2048'
             }), true)
             .addField('Bot', message.author.bot, true) //Returns True If Message Author = Bot || False If Message Author not Bot.
