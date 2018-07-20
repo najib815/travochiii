@@ -3,20 +3,15 @@ const { get } = require("snekfetch");
  
  module.exports.run = async(bot, message, args) {
     const { body } = await get("https://rra.ram.moe/i/r?type=owo");
-    await message.edit({
-      embed: {
-        "title": "Click here if the image failed to load.",
-        "url": `https://cdn.ram.moe/${body.path.replace("/i/", "")}`,
-        "color": 6192321,
-        "image": {
-          "url": `https://cdn.ram.moe/${body.path.replace("/i/", "")}`
-        },
-        "footer": {
-          "icon_url": message.author.displayAvatarURL({ format: "png", size: 32 }),
-          "text": `Requested by ${message.author.tag}`
-        }
-      }
-    });
+    let embed = new Discord.RichEmbed() 
+        .setTitle("OwO")
+        .setImage(`https://cdn.ram.moe/${body.path.replace("/i/", "")}` 
+        .setColor("RANDOM") 
+        .setFooter(`Requested by ${message.author.tag}`)
+        .setTimestamp()
+
+    await message.channel.send(embed)
+   
 
   }
  module.exports.help = {
