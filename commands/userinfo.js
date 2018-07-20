@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const moment = require("moment");
 
 exports.run = async (bot, message, args) => {
-	let user;
+	let user
 	// If the user mentions someone, display their stats. If they just run userinfo without mentions, it will show their own stats.
     if (message.mentions.users.first()) {
       user = message.mentions.users.first();
@@ -28,6 +28,6 @@ exports.run = async (bot, message, args) => {
 		.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
 		.addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
 		.setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
-     message.channel.send({embed});
+     message.channel.send({embed})
     }
 };
