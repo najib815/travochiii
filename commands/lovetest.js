@@ -1,4 +1,5 @@
- const Discord = require("discord.js");
+const Discord = require("discord.js");
+const { get } = require("snekfetch");
  
  module.exports.run = async (message, args, bot) => {
     if (!message.mentions.members.size) return message.response(undefined, "Ba-Baka! How will I tell you, how much you love someone. If I don't know who!"); 
@@ -16,5 +17,5 @@
   
   }
  module.exports.help = {
-    name: "hentai"
+    name: "lovetest"
 }
