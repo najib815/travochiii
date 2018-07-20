@@ -8,7 +8,7 @@ exports.run = async (bot, message) => {
 
             //All Fields are Optional Pick Any some
 
-            .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
+            .setAuthor(message.author.username) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
             .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
             .setImage(message.author.avatarURL()) //Add Any Image URl || Image
