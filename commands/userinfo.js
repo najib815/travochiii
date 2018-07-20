@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
     if (message.mentions.users.first()) {
       user = message.mentions.users.first();
     } else {
-        user = message.author;
+        user = message.author
     }
 	// Define the member of a guild.
     const member = message.guild.member(user);
