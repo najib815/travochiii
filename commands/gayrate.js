@@ -1,13 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports = {
-  // Information
-  name: 'gayrate',
-  aliases: ['gay', 'g%', '%g'],
-  description: 'ThisSHitty Bot will tell you how gay you\'re.',
-  // Requirements
-  // Function
-  run: (bot, message, args) => {
+module.exports.run = async(bot, message, args) => {
+  
     const randomnumber = Math.floor(Math.random() * 101);
     const embed = new Discord.RichEmbed()
        .setAuthor(${bot.user.username}, ${bot.user.avatarURL})
@@ -21,6 +15,4 @@ module.exports = {
     
     message.channel.send({embed});
 
-    )
-  }
 };
