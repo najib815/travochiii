@@ -1,80 +1,47 @@
+const Discord = require('discord.js')
 const dateFormat = require('dateformat');
 
 dateFormat('dddd, mmmm dS, yyyy, h:MM:ss TT');
 
 exports.run = async (bot, message) => {
-    //Makes sure command is sent in a guild
-    if (!message.guild) {
-        throw 'This can only be used in a guild!';
+    const UserInfo = new Discord.MessageEmbed()
+
+            //All Fields are Optional Pick Any some
+
+            .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
+            .setTitle('UserInfo')
+            .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
+            .setImage(message.author.avatarURL()) //Add Any Image URl || Image
+            .setThumbnail(message.author.avatarURL()) //Add Any Image URl || ThumbNail
+
+            //All Feilds Are Just Examples pick Some & add as you like
+
+            .addField('Avatar', message.author.avatar, true) //The ID of the user's avatar //Inline True or false
+            .addField('AvatarURL', message.author.avatarURL({
+                format: 'png'
+            }), true) //{options} options are Size?: 128 | 256 | 512 | 1024 | 2048, Format?: "webp" | "png" | "jpg" | "gif" //.defaultAvatarURL() A link to the user's default avatar //.displayAvatarURL() A link to the user's avatar if they have one. Otherwise a link to their default avatar will be returned
+            .addField('AvatarURL', message.author.avatarURL({
+                size: '2048'
+            }), true)
+            .addField('Bot', message.author.bot, true) //Returns True If Message Author = Bot || False If Message Author not Bot.
+            .addField('Created At', message.author.createdAt, false) //The time the user was created || .createdTimestamp - The timestamp the user was created at
+            .addField('Discrim', message.author.discriminator, true) //A discriminator/tag based on username for the user Ex:- 0001
+            .addField('DMChannel', message.author.dmChannel) //The DM between the client's user and this user || If Nothing Returns "Null"
+            .addField('ID', message.author.id) //The ID of the User/author
+            .addField('Last Message', message.author.lastMessage) //The Message object of the last message sent by the user, if one was sent
+            .addField('Last Message ID', message.author.lastMessageID) //The ID of the last message sent by the user, if one was sent
+            .addField('Presence', message.author.presence) //The presence of this user
+            .addField('Presence Status', message.author.presence.status) //The presence status of this user
+            .addField('Presence Game', message.author.presence.activity.name) //The presence Game of this user
+            .addField('Tag', message.author.tag) //The Discord "tag" for this user || Ex:- Sai Chinna#6718
+            .addField('Username', message.author.username) //The username of the user || Ex:- Sai Chinna
+            .addField('Nick Name', message.guild.member(target).displayName) //Nick Name In That (message sent) server || Define target as message Author Ex:- let target = message.author; || Add This Line in Top
+
+            .setFooter('Requested By', message.author.tag) //Change To Anything As You Wish
+            .setTimestamp() //The timestamp of this embed
+
+        message.channel.send(UserInfo);
     }
-
-    //Makes sure user mentions a user to get info for
-    if (message.mentions.users.size < 1) {
-        throw '@mention someone to find the info';
-    }
-
-    let user = message.mentions.users.first();
-    let member = message.guild.member(user);
-
-    if (!member) {
-        throw 'That member could not be found!';
-    }
-
-    //How long ago the account was created
-    const millisCreated = new Date().getTime() - user.createdAt.getTime();
-    const daysCreated = millisCreated / 1000 / 60 / 60 / 24;
-
-    //How long about the user joined the server
-    const millisJoined = new Date().getTime() - member.joinedAt.getTime();
-    const daysJoined = millisJoined / 1000 / 60 / 60 / 24;
-
-    // Slice off the first item (the @everyone)
-    let roles = member.roles.array().slice(1).sort((a, b) => a.comparePositionTo(b)).reverse().map(role => role.name);
-    if (roles.length < 1) roles = ['None'];
-
-    let embed = bot.utils.embed(
-        `${user.username}#${message.mentions.users.first().discriminator}`,
-        '***This message will dissappear in 60 seconds.***',
-        [
-            {
-                name: 'Status',
-                value: `${user.presence.status[0].toUpperCase() + user.presence.status.slice(1)}`,
-            },
-            {
-                name: 'Game',
-                value: `${(user.presence.game && user.presence.game && user.presence.game.name) || 'Not playing a game.'}`,
-            },
-            {
-                name: 'Created On',
-                value: `${dateFormat(user.createdAt)}`,
-            },
-            {
-                name: 'Days Since Creation',
-                value: `${daysCreated.toFixed(0)}`,
-            },
-            {
-                name: 'Joined On',
-                value: `${dateFormat(member.joinedAt)}`,
-            },
-            {
-                name: 'Days Since Joining',
-                value: `${daysJoined.toFixed(0)}`,
-            },
-            {
-                name: 'Roles',
-                value: `${roles.join(', ')}`,
-                inline: false,
-            },
-        ],
-        {
-            inline: true,
-            footer: `User ID: ${user.id}`,
-            thumbnail: user.displayAvatarURL
-        }
-    );
-
-    (await message.edit({ embed })).delete(60000);
-};
 
 exports.info = {
     name: 'userinfo',
