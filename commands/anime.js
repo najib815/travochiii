@@ -32,7 +32,7 @@ const { Collection } = require("discord.js");
   }
 
   makeTitle(index, data) {
-    const line1 = data[index].titles.en_jp ? data[index].titles.en_jp : "";
+    const line1 = data[index].titles.en_jp ? `/${data[index].titles.en_jp}` : "";
     const line2 = data[index].titles.en ? `{/${data[index].titles.en}` : "";
     return `${line1}${line2}`;
   }
