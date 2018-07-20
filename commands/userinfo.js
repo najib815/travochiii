@@ -4,7 +4,7 @@ const dateFormat = require('dateformat');
 dateFormat('dddd, mmmm dS, yyyy, h:MM:ss TT');
 
 exports.run = async (bot, message) => {
-    const UserInfo = new Discord.MessageEmbed()
+    const UserInfo = new Discord.RichEmbed()
 
             //All Fields are Optional Pick Any some
 
