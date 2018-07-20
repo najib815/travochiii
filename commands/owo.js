@@ -20,5 +20,5 @@ const { get } = require("snekfetch");
 
   }
  module.exports.help = {
-    name: "lovetest"
+    name: "owo"
 }
