@@ -99,13 +99,7 @@ module.exports.run = async (bot, message, args) => {
           icon_url: `${message.guild.ownerID === user.id ? 'https://i.imgur.com/2ogsleu.png' : ''}`
         }
       }
-    }).catch(e => {
-      bot.log.error(e);
-    });
-  }
-  catch (e) {
-    bot.log.error(e);
-  }
+    })
 };
 
 module.exports.config = {
