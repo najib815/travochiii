@@ -1,4 +1,4 @@
-exports.exec = async (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
   try {
     let user, member;
     if (message.mentions.users.size) {
@@ -108,7 +108,7 @@ exports.exec = async (bot, message, args) => {
   }
 };
 
-exports.config = {
+module.exports.config = {
   aliases: [ 'uinfo' ],
   enabled: true,
   argsDefinitions: [
@@ -116,7 +116,7 @@ exports.config = {
   ]
 };
 
-exports.help = {
+module.exports.help = {
   name: 'userInfo',
   description: 'Shows information of a specified user of your Discord server.',
   botPermission: '',
