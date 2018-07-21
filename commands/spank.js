@@ -14,7 +14,7 @@ module.exports.run = async(bot, message, args) => {
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle(`**${message.author.username} Spanks ${message.mentions.members.first().user.username}'s Ass O.O !`)
+    .setTitle(`**${message.author.username} ** **Spanks** **${message.mentions.members.first().user.username}'s** **Ass** O.O !`)
     .setImage(body.url)
     .setColor("RANDOM")
 
