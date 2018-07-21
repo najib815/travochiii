@@ -12,4 +12,6 @@ const Discord = require("discord.js");
  
 }
 
-module.exports = joke;
+module.exports.help = {
+    name: "joke"
+}
