@@ -9,7 +9,7 @@ const Discord = require("discord.js");
       .setColor(6192321);
 
     await message.channel.send({ embed });
-  }
+ 
 }
 
 module.exports = PunJoke;
