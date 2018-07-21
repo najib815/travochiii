@@ -6,7 +6,7 @@ module.exports.run = async(bot, message, args) => {
   
  if (!args[0]) {
             message.channel.send({embed: {
-              color: "Random",
+              color: 3447003,
               title: "Gay Rate Machine",
               description: `${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`,
             }
@@ -25,7 +25,7 @@ module.exports.run = async(bot, message, args) => {
     return;
         }
             message.channel.send({embed: {
-              color: "Random",
+              color: 3447003,
               title: "Gay Rate Machine",
               description: `${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`,
             }
