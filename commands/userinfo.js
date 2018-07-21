@@ -1,121 +1,55 @@
-module.exports.run = async (bot, message, args) => {
-  try {
-    let user, member;
-    if (message.mentions.users.size) {
-      user = message.mentions.users.first();
-    }
-    else if (args.id) {
-      member = await message.guild.fetchMember(args.id);
-      if (member) {
-        user = member.user;
-      }
-    }
-    if (!user) {
-      user = message.author;
-    }
-    if (!member) {
-      member = await message.guild.fetchMember(user.id);
-    }
-    let nick = member.nickname;
-    if (!nick) {
-      nick = '-';
-    }
-    let status = user.presence.status;
-    if (status === 'online') {
-      status = 'Online';
-    }
-    else if (status === 'idle') {
-      status = 'Idle';
-    }
-    else if (status === 'dnd') {
-      status = 'Do Not Disturb';
-    }
-    else {
-      status = 'Offline';
-    }
-    let activity;
-    if (user.presence.game) {
-      activity = `${bot.Constants.ActivityTypes[user.presence.game.type]} ${user.presence.game.name}`;
-    }
-    else {
-      activity = 'None';
-    }
-    let roles = member.roles.map(r => r.name).slice(1).join('\n');
-    if (roles.length === 0) roles = '-';
+const moment = require('moment');
+const discord = require('discord.js');
 
-    let mutualGuilds = await bot.methods.getMutualGuilds(user);
+exports.run = async (bot, msg, args) => {
+    if (!args[0]) {
+        return msg.channel.send('Please mention someone or use their ID for the command');
+    }
+    let userCom = bot.users.get(args[0]) || msg.mentions.users.last();
+    if (!userCom) {
+        return msg.channel.send('Please mention someone or use their ID for the command');
+    }
+    let memberCom = await msg.guild.fetchMember(userCom);
+    let created = moment(userCom.createdAt).format('MMMM Do YYYY, h:mm:ss a');
+    let joined = moment(memberCom.joinedAt).format('MMMM Do YYYY, h:mm:ss a');
+    let game = userCom.presence.game ? userCom.presence.game.name : 'None';
+    let nickname = !memberCom.nickname ? 'None' : memberCom.nickname;
+    let avatar = userCom.displayAvatarURL;
+    let uid = userCom.id;
+    let tag = userCom.tag;
+    let isBot = userCom.bot ? 'Yes' : 'No';
+    let status = '';
+    if (userCom.presence.status === 'online') {
+        status = 'Online';
+    } else if (userCom.presence.status === 'offline') {
+        status = 'Offline';
+    } else if (userCom.presence.status === 'idle') {
+        status = 'Idle';
+    } else if (userCom.presence.status === 'dnd') {
+        status = 'Do not disturb';
+    }
+    const embed = new discord.RichEmbed()
+        .setTitle('Userinfo | ' + userCom.username)
+        .setThumbnail(avatar)
+        .setDescription(`[Click here for the Avatar Link](${avatar})`)
+        .addField('General Information', `Tag: **${tag}**\nID: **${uid}**\nGame: **${game}**\nStatus: **${status}**\nCreated at: **${created}**\nIs a Bot?: **${isBot}**`)
+        .addField('Guild Spec. Information', `Nickname: **${nickname}**\nJoined at: **${joined}**\n`)
+        .setFooter('May')
+        .setColor('#19A6D4')
+        .setTimestamp();
 
-    message.channel.send({
-      embed: {
-        color: bot.colors.BLUE,
-        title: `${user.bot ? 'Bot' : 'User'} Info`,
-        fields: [
-          {
-            name: 'Name',
-            value: user.tag,
-            inline: true
-          },
-          {
-            name: 'ID',
-            value: user.id,
-            inline: true
-          },
-          {
-            name: 'Nickname',
-            value: nick,
-            inline: true
-          },
-          {
-            name: 'Roles',
-            value: roles,
-            inline: true
-          },
-          {
-            name: 'Joined Server',
-            value: member.joinedAt.toUTCString(),
-            inline: true
-          },
-          {
-            name: 'Joined Discord',
-            value: user.createdAt.toUTCString(),
-            inline: true
-          },
-          {
-            name: 'Status',
-            value: status,
-            inline: true
-          },
-          {
-            name: 'Activity',
-            value: activity,
-            inline: true
-          }
-        ],
-        thumbnail: {
-          url: user.displayAvatarURL
-        },
-        footer: {
-          text: `${message.guild.ownerID === user.id ? 'Server Owner •' : ''} Shares ${mutualGuilds} servers with me.`,
-          icon_url: `${message.guild.ownerID === user.id ? 'https://i.imgur.com/2ogsleu.png' : ''}`
-        }
-      }
-    })
+    msg.channel.send({embed});
 };
 
-module.exports.config = {
-  aliases: [ 'uinfo' ],
-  enabled: true,
-  argsDefinitions: [
-    { name: 'id', type: String, defaultOption: true }
-  ]
-};
-
-module.exports.help = {
-  name: 'userInfo',
-  description: 'Shows information of a specified user of your Discord server.',
-  botPermission: '',
-  userTextPermission: '',
-  userVoicePermission: '',
-  usage: 'userInfo [@USER_MENTION | USER_ID]',
-  example: [ 'userInfo @user#0001', 'userInfo 167122669385743441', 'userInfo' ]
+exports.help = {
+    category: 'util',
+    usage: '[user]',
+    description: 'Get info about a user',
+    detail: `Shows detailed information about a user`,
+    botPerm: ['SEND_MESSAGES'],
+    authorPerm: [],
+    example: '@user#3478',
+    alias: [
+        null
+    ]
 };
