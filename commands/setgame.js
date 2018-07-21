@@ -1,68 +1,24 @@
-const normalizeUrl = require('normalize-url');
-
-exports.run = async (bot, message, args) => {
-    let { leftover, options } = bot.utils.parseArgs(args, ['s:', 'w', 'l']);
-
-    if (leftover.length < 1) {
-        if (options.s) {
-            throw 'You must provide a game as well as a stream URL.';
+module.exports = {
+    name: "setgame",
+    description: "Sets your playing status",
+    aliases: ["setgame", "changegame", "playing"],
+    usage: "setgame <new game>",
+    notes: "- Giving no arguments resets your game",
+    group: "util",
+    allowDM: true,
+    run(bot, message, args, data) {
+        try {
+            const game = args.join(" ").trim();
+            if (game) {
+                bot.user.setGame(game).catch(e => message.err(e, "while setting game"));
+                message.edit(`Successfully set game to \`${game}\`!`);
+            } else {
+                bot.user.setGame(null).catch(e => message.err(e, "while resetting game"));
+                message.edit("Successfully reset game!");
+            }
+        } catch (e) {
+            message.err(e, "while changing game");
+            data.logger.err(e.stack)
         }
-
-        bot.user.setActivity(null, {});
-        return message.edit('Cleared your game! :ok_hand:').then(m => m.delete(3000));
     }
-
-    let game = leftover.join(' ');
-    let stream = options.s;
-
-    let fields = [];
-
-    let activityOptions = { type: 'PLAYING' };
-    let activityFieldTitle = ':video_game: Game';
-
-    if (stream) {
-        stream = normalizeUrl(`twitch.tv/${stream}`);
-
-        activityOptions.url = stream;
-        activityOptions.type = 'STREAMING';
-
-        fields.push({ name: ':headphones: Stream URL', value: stream });
-    } else if (options.w) {
-        activityOptions.type = 'WATCHING';
-        activityFieldTitle = ':eyes: Watching';
-    } else if (options.l) {
-        activityOptions.type = 'LISTENING';
-        activityFieldTitle = ':sound: Listening to';
-    }
-
-    fields.unshift({ name: activityFieldTitle, value: game });
-
-    bot.user.setActivity(game, activityOptions);
-
-    message.delete();
-
-    (await message.channel.send({
-        embed: bot.utils.embed(':ok_hand: Game changed!', '', fields)
-    })).delete(5000);
-};
-
-exports.info = {
-    name: 'setgame',
-    usage: 'setgame <game>',
-    description: 'Sets your game (shows for other people)',
-    options: [
-        {
-            name: '-s',
-            usage: '-s <url>',
-            description: 'Sets your streaming URL to http://twitch.tv/<url>'
-        },
-        {
-            name: '-w',
-            description: 'Sets your game prefix to **Watching**'
-        },
-        {
-            name: '-l',
-            description: 'Sets your game prefix to **Listening to**'
-        }
-    ]
 };
