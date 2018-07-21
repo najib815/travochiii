@@ -1,5 +1,5 @@
 exports.run = (message, bot, send) => {
-    let user = message.mentions.user.first() || message.author
+    let user = message.mentions.members.first() || message.author
     let rep = bot.profile.getRep(user.id)
     let keys = Object.keys(rep)
     let total = 0
