@@ -4,12 +4,15 @@ module.exports.run = async(bot, message, args) => {
   
   const randomnumber = Math.floor(Math.random() * 100 + 1);
   
-    const embed = new Discord.RichEmbed()
-       .setColor(`Random`)
-       .setTitle("Gay Rate Machine")
-       .setDescription(`${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`)
-       .setTimestamp();
-    message.channel.send({embed});
+ if (!args[0]) {
+            message.channel.send({embed: {
+              color: "Random",
+              title: "Gay Rate Machine",
+              description: `${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`,
+            }
+            });
+            return;
+        }
   
     if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
   
@@ -21,12 +24,12 @@ module.exports.run = async(bot, message, args) => {
     message.channel.send(hentaiEmbed);
     return;
         }
-    let henEmbed = new Discord.RichEmbed()
-       .setColor(`Random`)
-       .setTitle("Gay Rate Machine")
-       .setDescription(`${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`)
-       .setTimestamp();
-        message.channel.send(henEmbed);
+            message.channel.send({embed: {
+              color: "Random",
+              title: "Gay Rate Machine",
+              description: `${message.member.user.username} you are ${randomnumber}% gay! :gay_pride_flag:`,
+            }
+            });
 } 
 
 
