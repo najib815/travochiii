@@ -1,4 +1,4 @@
-module.exports.exec = async(bot, message, args) => {
+module.exports.run = async(bot, message, args) => {
   if (!args.name) {
     /**
      * The command was ran with invalid parameters.
