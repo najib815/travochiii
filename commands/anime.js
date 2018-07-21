@@ -4,7 +4,7 @@ const Kitsu = require('kitsu.js');
 const kitsu = new Kitsu();
 
 module.exports.run = async(message) => {
-        var search = message.content.split(/\s+/g).slice(1).join(" ");
+        const search = message.content.split(/\s+/g).slice(1).join(" ");
 
         if (!search) {
 
@@ -24,7 +24,7 @@ module.exports.run = async(message) => {
             })
 
         } else {
-            var search = message.content.split(/\s+/g).slice(1).join(" ");
+            const search = message.content.split(/\s+/g).slice(1).join(" ");
 
             kitsu.searchAnime(search).then(result => {
                 if (result.length === 0) {
