@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 exports.run = (message, bot, send) => {
-  let user = message.mentions.members.first()
+  let user = message.mentions.members.first().user.username
   if (!user) return send("**Mention a user to rep+ them**")
   if (user.id === message.author.id) return send("**You can't rep yourself**")
   let msg = message.args[1] ? message.args.slice(1).join(" ") : false
