@@ -12,4 +12,4 @@ const Discord = require("discord.js");
  
 }
 
-module.exports = PunJoke;
+module.exports = joke;
