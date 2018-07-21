@@ -1,4 +1,4 @@
-exports.exec = (bot, message, args) => {
+module.exports.exec = async(bot, message, args) => {
   if (!args.name) {
     /**
      * The command was ran with invalid parameters.
@@ -18,7 +18,7 @@ exports.exec = (bot, message, args) => {
   }
 };
 
-exports.config = {
+module.exports.config = {
   aliases: [ 'animote' ],
   enabled: true,
   argsDefinitions: [
@@ -26,7 +26,7 @@ exports.config = {
   ]
 };
 
-exports.help = {
+module.exports.help = {
   name: 'animoji',
   description: 'Sends a large version of the specified animated emoji of your Discord server. And Nitro isn\'t required.',
   botPermission: '',
