@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 let special = {
     "0": ":zero:",
     "1": ":one:",
@@ -21,7 +22,7 @@ let special = {
 }
 
 exports.run = (message, bot) => {
-    var emoji = message.suffix.toLowerCase().split("");
+    const emoji = message.suffix.toLowerCase().split("");
     let done = "";
 
     for (c = 0; c < emoji.length; c++) {
