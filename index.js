@@ -125,7 +125,7 @@ bot.on('ready', () => {
     console.log('I AM READY !')
     
     bot.user.setStatus('dnd')
-    bot.user.setActivity('With Sally and Travochi')
+    bot.user.setActivity('Bot by Sally & Travochi', 'https://www.twitch.tv/najib815')
 })
 
 bot.login(process.env.TOKEN);
