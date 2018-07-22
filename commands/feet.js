@@ -4,7 +4,7 @@ const superagent = require("superagent");
 module.exports.run = async(bot, message, args) => {
     
     let {body} = await superagent
-    .get(`https://nekos.life/api/v2/img/feet`);
+    .get(`https://nekos.life/api/v2/img/feetg`);
     if (!message.channel.nsfw) return message.reply(" You must be in a N.S.F.W channel to use this command.");
   
     let feetEmbed = new Discord.RichEmbed()
