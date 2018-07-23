@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async(bot, message, args) => {
     message.delete()
         // Check if user has the permission to use the command.
-    if (!message.member.roles.find("name", "Staff")) {
+    if (!message.member.roles.find("name", "🔸️Owners")) {
         return message.channel.send('⚠️ **You need the** \*`Staff*\` **role to use this command.** ⚠️')
             .then(m => m.delete(5000));
     }
