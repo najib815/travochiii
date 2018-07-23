@@ -1,32 +1,21 @@
 const Discord = require('discord.js');
 
 exports.run = async(bot, message, args) => {
+     if (!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry `I do not have the correct permissions.`').catch(console.error);
+     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry: `Sorry, but you do not have valid permissions! If you beleive this is a error, contact an owner.`");
 
-            const user = message.mentions.users.first();
-	if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Sorry, you don\'t have permission to delete or purge messages!')
-		.then(msg => msg.delete({
-			timeout: 10000
-		}));
-	const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
-	if (!amount) return message.channel.send('Specify an amount of messages to delete or purge!')
-		.then(msg => msg.delete({
-			timeout: 10000
-		}));
-	if (!amount && !user) return message.channel.send('Specify a user and amount, or just an amount, of messages to delete or purge!')
-		.then(msg => msg.delete({
-			timeout: 10000
-		}));
-	message.channel.messages.fetch({
-			limit: amount
-		, })
-		.then((messages) => {
-			if (user) {
-				const filterBy = user ? user.id : bot.user.id;
-				messages = messages.filter(m => m.author.id === filterBy)
-					.array()
-					.slice(0, amount);
-			}
-			message.channel.bulkDelete(messages)
-				.catch(error => console.log(error.stack));
-		});
+     const deleteCount = parseInt(args[0], 10);
+    
+      if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete.");
+   
+    const fetched = await message.channel.fetchMessages({limit: deleteCount});
+    message.channel.bulkDelete(fetched)
+	var cleanEmbed = new Discord.RichEmbed()            
+            .setAuthor('Clean Embed')
+            .setDescription(`Cleaned **${args[1]}** messages :white_check_mark:`)
+            .setFooter('Requested By ' + message.author.tag, message.author.avatarURL)
+            .setColor('#ffffff');
+            message.channel.send(cleanEmbed);
+      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 }
