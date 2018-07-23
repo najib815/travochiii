@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const db = require('quick.db');
+const prefix = ';!';
 
 exports.run = async (bot, message, args) => {
     const ahkEmbed = new Discord.RichEmbed()
@@ -14,7 +15,7 @@ exports.run = async (bot, message, args) => {
 
 
     const msgs = await message.channel.awaitMessages(msg => {
-        if (msg.content.startsWith("pepperoni")) {
+        if (msg.content.startsWith(prefix "pepperoni")) {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Here is your pepperoni pizza! Enjoy :D`)
                 .setColor(`RANDOM`)
@@ -56,7 +57,7 @@ exports.run = async (bot, message, args) => {
                     }
 
                 }, {
-                    time: 50000
+                    time: 1000
                 })
             }
             pineapple()
