@@ -15,7 +15,7 @@ exports.run = async (bot, message, args) => {
 
 
     const msgs = await message.channel.awaitMessages(msg => {
-        if (msg.content.startsWith(prefix "pepperoni")) {
+        if (msg.content.startsWith("pepperoni")) {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Here is your pepperoni pizza! Enjoy :D`)
                 .setColor(`RANDOM`)
@@ -57,7 +57,7 @@ exports.run = async (bot, message, args) => {
                     }
 
                 }, {
-                    time: 1000
+                    time: 3000
                 })
             }
             pineapple()
