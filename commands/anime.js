@@ -4,7 +4,7 @@ const Kitsu = require('kitsu.js');
 const kitsu = new Kitsu();
 
 module.exports.run = async(message) => {
-        const search = message.content.split(/\s+/g).slice(1).join(" ");
+        const search = message.content.slice(/\s+/g).split(1).join(" ");
 
         if (!search) {
 
