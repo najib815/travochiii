@@ -57,7 +57,7 @@ if (nxtLvl <= xp[message.author.id].xp) {
 }
 fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
             if (err) console.log(err)
-
+});
     
     if (msg.startsWith(prefix + '8BALL')) {
       if ( msg.endsWith('?')) {
