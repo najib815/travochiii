@@ -3,7 +3,7 @@ var aq = require('animequote');
 const Kitsu = require('kitsu.js');
 const kitsu = new Kitsu();
 
-module.exports.run = async(message) => {
+module.exports.run = async(message, args) => {
         const search = message.content.slice(/\s+/g).split(1).join(" ");
 
         if (!search) {
