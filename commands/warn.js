@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async(bot, message, args) => {
-let userCom = bot.users.get(args[0]) || msg.mentions.users.last();
+let userCom = bot.users.get(args[0]) || message.mentions.users.last();
 let avatar = userCom.displayAvatarURL;
 
 if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorry, but you don't have permission to use this!") 
