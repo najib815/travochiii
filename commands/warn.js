@@ -15,11 +15,11 @@ if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorr
     message.channel.send(`***${warnedmember.user.tag} was warned!***`)
     
     let wembed = new Discord.RichEmbed()
-       .setTitle("⚠️ WARRNING !!")
+       .setTitle("⚠️ WARNING !!")
        .setThumbnail(avatar)
-       .addField('You have been warned', `In: **${message.guild.name}**\n`)
-       .addField('Warned by :', `**${message.author.username}**\n`)
-       .addField('Reason :', `**${reason}**\n`)
+       .addField('>You have been warned in:', `**${message.guild.name}**\n`)
+       .addField('>Warned by :', `**${message.author.username}**\n`)
+       .addField('>Warning Reason :', `**${reason}**\n`)
        .setColor('#FF0000')
        .setTimestamp();
    await warnedmember.send(wembed)
