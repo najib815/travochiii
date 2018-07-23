@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 const prefix = ';!';
 //const fetch = require('snekfetch');
 const fs = require("fs");
+let xp = require("./xp.json");
 
 
 
