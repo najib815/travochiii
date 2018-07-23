@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
       },
       {
         name: "Idea's",
-        value: "Travolta (Facebook)[https://www.facebook.com/travolta.youssef.1]"
+        value: "Travolta [Facebook](https://www.facebook.com/travolta.youssef.1)"
       },
 	      {
         name: "Contact Us",
