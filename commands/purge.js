@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = async(bot, message, args) => {
+	 if (!message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry `I do not have the correct permissions.`').catch(console.error);
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry: `Sorry, but you do not have valid permissions! If you beleive this is a error, contact an owner.`");
 
      const deleteCount = parseInt(args[0], 10);
     
@@ -14,6 +16,6 @@ exports.run = async(bot, message, args) => {
             .setDescription(`Cleaned **${args[1]}** messages :white_check_mark:`)
             .setFooter('Requested By ' + message.author.tag, message.author.avatarURL)
             .setColor('#ffffff');
-            message.channel.send(cleanEmbed);
+            message.channel.send(cleanEmbed)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 }
