@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js");
 
-let ccreator = ("🍯「Hachimitsu」#4965 & 🍭砂糖 「Satō」#9098");
+let ccreator = ("**🍯「Hachimitsu」#4965**\n🍭砂糖 「Satō」#9098");
 
 let ccommunity = ("CALM community!");
 
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Makers:", ccreator)
         .addField("Idea's:", ccommunity)
-        .addField(`[For more click here](https://www.facebook.com/travolta.youssef.1)`)
+        .addField(`[Click here for more](https://www.facebook.com/travolta.youssef.1)`)
 
 
         message.channel.send({embed: embed});
