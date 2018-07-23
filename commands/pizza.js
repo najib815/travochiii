@@ -18,7 +18,7 @@ exports.run = async (bot, message, args) => {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Here is your pepperoni pizza! Enjoy :D`)
                 .setColor(`RANDOM`)
-                .setFooter(`Pizza command by Etzy`)
+                .setTimestamp()
                 .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
             message.channel.send({
                 embed: ahkkEmbed
@@ -28,7 +28,7 @@ exports.run = async (bot, message, args) => {
             const ahkkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Here is your cheese pizza! Enjoy :D`)
                 .setColor(`RANDOM`)
-                .setFooter(`Pizza command by Etzy`)
+                .setTimestamp()
                 .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
             message.channel.send({
                 embed: ahkkkEmbed
@@ -42,7 +42,7 @@ exports.run = async (bot, message, args) => {
                         const ahkkkkEmbed = new Discord.RichEmbed()
                             .setTitle(`Here is your pineapple pizza! Enjoy :D`)
                             .setColor(`RANDOM`)
-                            .setFooter(`Pizza command by Etzy`)
+                            .setTimestamp()
                             .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
                         message.channel.send({
                             embed: ahkkkkEmbed
