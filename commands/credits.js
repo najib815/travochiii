@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
       },
 	      {
         name: "Contact Us",
-        value: "(For More Contact Us In)[https://www.facebook.com/travolta.youssef.1]      
+        value: "[For More Contact Us In](https://www.facebook.com/travolta.youssef.1)"    
       },
 	}});
 }
