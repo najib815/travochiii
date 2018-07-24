@@ -12,7 +12,7 @@ bot.on('message', message => {
     let msg = message.content.toUpperCase();
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
-    let cmd = args.shift().toLowerCase(); 
+    let cmds = args.shift().toLowerCase(); 
 
     
     if (sender.bot) return;
@@ -20,13 +20,13 @@ bot.on('message', message => {
 
     
     try {
-        let commandFile = require(`./commands/${cmd}.js`); 
+        let commandFile = require(`./commands/${cmds}.js`); 
         commandFile.run(bot, message, args); 
     } catch(e) { 
         message.channel.send('Invalid Command');
         console.log(e.message);
     } finally {
-        console.log(`${message.author.username} ran the command: ${cmd}`);
+        console.log(`${message.author.username} ran the command: ${cmds}`);
     }
     
     
