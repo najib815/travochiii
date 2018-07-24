@@ -8,7 +8,9 @@ exports.run = (bot, message, args) => {
     const subreddits = [
         'nsfwcosplay',
         'cosporn',
-        'cosplayboobs'
+        'cosplayboobs',
+        'NudeCosplay',
+        'cosplaybabes'
     ]
     const sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
