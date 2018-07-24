@@ -3,14 +3,12 @@ const fs = require("fs");
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 
 module.exports.run = (bot, message, args) => {
+     for (var cmd in commands) {
      const onlyHelp = new Discord.RichEmbed()
                .setColor('RANDOM')
                .setTitle("Commands")
-            
-            let commandsFound = 0;
-            
-            for (var cmd in commands) {
-              onlyHelp.addField('${commands[cmd].name} commands','TEST TEST EST');
+              .addField('${commands[cmd].name} commands','TEST TEST EST');
+          let commandsFound = 0;
             }
             message.channel.send({onlyHelp})
 }
