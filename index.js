@@ -121,22 +121,7 @@ bot.on('message', message => {
         
         message.channel.send(':cherry_blossom: Hey, you have to know that someone, (somewhere,somehow), loves you.:revolving_hearts:');
     }
-    if (msg.startsWith(prefix + 'HELP')) {
-        
-        if (msg === '${prefix}HELP') {
-            const onlyHelp = new Discord.RichEmbed()
-               .setColor('RANDOM')
-            
-            let commandsFound = 0;
-            
-            for (var cmd in commands) {
-              onlyHelp.addField('${commands[cmd].type} commands');
-            }
-            message.channel.send({onlyHelp})
-        }
-    }
-    
-
+   
 })
 bot.on('ready', () => {
     console.log('I AM READY !')
