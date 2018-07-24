@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (bot, message, args, tools, con) => {
     let help = new Discord.RichEmbed()
         .setAuthor("Calm's bot Commands")
-        .setColor(0x703817)
+        .setColor('RANDOM')
         .addField("TEST 1", "`test`,`tst`")
         .addField("TEST 2", "`test`,`tst`")
         .addField("TEST 3", "`test`,`tst`");
