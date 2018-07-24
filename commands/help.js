@@ -5,6 +5,7 @@ const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 module.exports.run = (bot, message, args) => {
      const onlyHelp = new Discord.RichEmbed()
                .setColor('RANDOM')
+               .setTitle("Commands")
             
             let commandsFound = 0;
             
