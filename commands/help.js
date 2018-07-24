@@ -9,7 +9,7 @@ module.exports.run = (bot, message, args) => {
             let commandsFound = 0;
             
             for (var cmd in commands) {
-              onlyHelp.addField('${commands[cmd].type} commands');
+              onlyHelp.addField('${commands[cmd].name} commands','TEST TEST EST');
             }
             message.channel.send({onlyHelp})
 }
