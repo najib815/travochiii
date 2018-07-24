@@ -2,14 +2,15 @@ const Discord = require('discord.js');
 const fs = require("fs");
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 
-module.exports.run = (bot, message, args) => {
-     for (var cmd in commands) {
-     const onlyHelp = new Discord.RichEmbed()
-               .setColor('RANDOM')
-               .setTitle("Commands")
-              .addField('${commands[cmd].name} commands','TEST TEST EST');
-          let commandsFound = 0;
-            
-            message.channel.send({onlyHelp})
-     }
+
+module.exports.run = async (bot, message, args, tools, con) => {
+    try {
+        await message.author.send(`Commands: \n\n${bot.commands.map(cmd => `\`${cmd.help.name}\``).join(", ")}`);
+        message.channel.send("Help sent.");
+    } catch (e) {
+        throw e;
+    }
 }
+exports.help = {
+        name: "help"
+    }
