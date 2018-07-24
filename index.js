@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const prefix = ';!';
 //const fetch = require('snekfetch');
 const fs = require("fs");
-let xp = require("./xp.json");
+const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 
 
 
@@ -120,6 +120,20 @@ bot.on('message', message => {
     if (msg === prefix + 'LOVE') {
         
         message.channel.send(':cherry_blossom: Hey, you have to know that someone, (somewhere,somehow), loves you.:revolving_hearts:');
+    }
+    if (msg.startsWith(prefix + 'HELP')) {
+        
+        if (msg === '${prefix}HELP') {
+            const onlyHelp = new Discord.RichEmbed()
+               .setColor('RANDOM')
+            
+            let commandsFound = 0;
+            
+            for (var cmd in commands) {
+              onlyHelp.addField('${commands[cmd].type} commands');
+            }
+            message.channel.send({onlyHelp})
+        }
     }
     
 
