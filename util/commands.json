@@ -1,15 +1,21 @@
 {
     "help":{
         "name":"help",
-        "group":"",
+        "group":"test1",
         "desc":"",
         "usage":""
     },
-    "name":{
+    "shit":{
         "name":"help",
-        "group":"",
-        "desc":"",
-        "usage":""
+        "group":"test2",
+        "desc":"shit",
+        "usage":"shit"
+    },
+    "fuck":{
+        "name":"help",
+        "group":"test3",
+        "desc":"fuckt",
+        "usage":"fuck"
     }
     
 }
