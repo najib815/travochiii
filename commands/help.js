@@ -8,6 +8,7 @@ exports.run = async (bot, message, args, tools, con) => {
         .addField("TEST 2", "`test`,`tst`")
         .addField("TEST 3", "`test`,`tst`");
     message.channel.send(help)
+    message.react("🤔");
 }
 
 exports.help = {
