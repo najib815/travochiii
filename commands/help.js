@@ -9,6 +9,7 @@ module.exports.run = (bot, message, args) => {
                .setTitle("Commands")
               .addField('${commands[cmd].name} commands','TEST TEST EST');
           let commandsFound = 0;
-            }
+            
             message.channel.send({onlyHelp})
+     }
 }
