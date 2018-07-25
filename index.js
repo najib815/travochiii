@@ -129,5 +129,9 @@ bot.on('ready', () => {
     bot.user.setStatus('dnd')
     bot.user.setPresence({ game: { name: `Bot by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
 })
+bot.on("guildMemberAdd", function(member) {
+    let role = member.guild.roles.find("name", "Need Verification");
+    member.addRole(role).catch(console.error);
+});
 
 bot.login(process.env.TOKEN);
