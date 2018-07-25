@@ -1,22 +1,24 @@
 const request = require('snekfetch');
 const fs = require("fs")
 const Discord = require("discord.js")
+const Pornsearch = require('pornsearch');
+const Searcher = new Pornsearch('creampie');
 exports.run = (bot, message, args) => {
     if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
 
-    var topics = [
-        'cum',
-        'cumshot',
-        'anal',
-        'oral',
-        'teen',
-        'tits',
-        "milf",
-        "creampie"
+    //var topics = [
+        //'cum',
+        //'cumshot',
+       // 'anal',
+       // 'oral',
+        //'teen',
+        //'tits',
+        //"milf",
+        //"creampie"
     ]
-    const Pornsearch = require('pornsearch').default.search(topics[Math.round(Math.random() * (topics.length - 1))]);
+    //const Pornsearch = require('pornsearch').default.search(topics[Math.round(Math.random() * (topics.length - 1))]);
     
-    Pornsearch.gifs(1)
+    Searcher.gifs(1)
     .then(gifs => {
         let gifrnd = gifs.map(gif => gif.url)
         if (message.mentions.users.first()) {
