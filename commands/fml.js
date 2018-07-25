@@ -1,13 +1,13 @@
 const request = require("snekfetch");
 const HTMLParser = require("fast-html-parser");
 const Discord = require("discord.js");
-const { text } = await request.get("http://www.fmylife.com/random");
-const root = HTMLParser.parse(text);
 const article = root.querySelector(".block a");
 const downdoot = root.querySelector(".vote-down");
 const updoot = root.querySelector(".vote-up");
 const disc = ${article.childNodes[0].text};
 module.exports.run = async(bot, message, args) => {
+    const { text } = await request.get("http://www.fmylife.com/random");
+    const root = HTMLParser.parse(text);
     const embed = new Discord.RichEmbed()
       .setTitle("Fuck my Life, Random Edition!")
       .setColor(165868)
