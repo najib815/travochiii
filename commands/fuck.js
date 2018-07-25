@@ -15,7 +15,7 @@ exports.run = (bot, message, args) => {
         //'tits',
         //"milf",
         //"creampie"
-    ]
+    //]
     //const Pornsearch = require('pornsearch').default.search(topics[Math.round(Math.random() * (topics.length - 1))]);
     
     Searcher.gifs(1)
