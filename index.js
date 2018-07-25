@@ -144,7 +144,7 @@ guild.channels.forEach((channel) => {
 })
     let embed = new Discord.RichEmbed()
     .setColor(0x6441A4)
-    .setDescription('Hello, **I'm Calm's Bot** Created and Developed by Sally & Travochii. Thanks for inviting me if you have any questions/suggestions or you face a problem with our bot, we can help you by joining or [Discord Server](https://www.google.com/) or [Contacting](https://www.google.com/).')        
+    .setDescription(`Hello, **I'm Calm's Bot** Created and Developed by Sally & Travochii. Thanks for inviting me if you have any questions/suggestions or you face a problem with our bot, we can help you by joining or [Discord Server](https://www.google.com/) or [Contacting](https://www.google.com/).`)        
     .setFooter("Calm's Bot created and developed by 🍯「Hachimitsu」#4965 & 🍭「Satō」#9098");
 defaultChannel.send(embed);
 });
