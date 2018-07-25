@@ -1,8 +1,8 @@
 module.exports.run = async (bot, message, args) => { // Run the command when a command is called
 
     var discord = require('discord.js');
-    var currencyFormatter = require('currency-formatter')
-    var db = require('quick.db')
+    var currencyFormatter = require('currency-formatter');
+    var db = require('quick.db');
     var ms = require('parse-ms');
   
    // This Code Is Registered To Zinx#9129
@@ -21,7 +21,6 @@ module.exports.run = async (bot, message, args) => { // Run the command when a c
         let timeObj = ms(cooldown - (Date.now() - lastDaily))
 
         let lastDailyEmbed = new discord.RichEmbed()
-        .setAuthor(`Author`, `Picture Here`)
         .setColor(`DARK_RED`)
         .setDescription(`Daily Not Ready. Please Wait **${timeObj.hours}h ${timeObj.minutes}m**!`)
         message.channel.send(lastDailyEmbed)
@@ -30,10 +29,9 @@ module.exports.run = async (bot, message, args) => { // Run the command when a c
         db.add(`account_${message.member.id}`, amount).then(i => {
             var discord = require('discord.js')
             let dailyEmbed = new discord.RichEmbed()
-            .setAuthor(`Author Here`, `Picture Here`)
             .setColor(`DARK_RED`)
             .addField(`Account Holder: `, `${message.author}`)
-            .addField(`Daily Retrieved:`, `${currencyFormatter.format(amount, { code: 'USD' })}`)
+            .addField(`Daily Retrieved:`, `${currencyFormatter.format(amount, { code: 'USD' })}`);
             message.channel.send(dailyEmbed)
         })}
     })} catch(err) {console.log(err)}
