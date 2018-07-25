@@ -1,6 +1,7 @@
+const idiotAPI = require("idiotic-api");
 
 module.exports.run = async(bot, message, args) => {
-    await message.channel.send(await this.client.idiotAPI.owoify(args.join(" ")));
+    await message.channel.send(await bot.idiotAPI.owoify(args.join(" ")));
   }
 
 
