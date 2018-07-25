@@ -1,14 +1,13 @@
 const request = require("snekfetch");
 const HTMLParser = require("fast-html-parser");
 const Discord = require("discord.js");
-
+const { text } = await request.get("http://www.fmylife.com/random");
+const root = HTMLParser.parse(text);
+const article = root.querySelector(".block a");
+const downdoot = root.querySelector(".vote-down");
+const updoot = root.querySelector(".vote-up");
+const disc = ${article.childNodes[0].text};
 module.exports.run = async(bot, message, args) => {
-    const { text } = await request.get("http://www.fmylife.com/random");
-    const root = HTMLParser.parse(text);
-    const article = root.querySelector(".block a");
-    const downdoot = root.querySelector(".vote-down");
-    const updoot = root.querySelector(".vote-up");
-    const disc = ${article.childNodes[0].text};
     const embed = new Discord.RichEmbed()
       .setTitle("Fuck my Life, Random Edition!")
       .setColor(165868)
@@ -18,8 +17,4 @@ module.exports.run = async(bot, message, args) => {
       .addField("I agree, your life sucks", ${updoot.childNodes[0].text}, true)
       .addField("You deserved it:", ${downdoot.childNodes[0].text}, true);
     message.channel.send({ embed });
-}
-
-module.exports.help = {
-    name: "fml"
-}
+};
