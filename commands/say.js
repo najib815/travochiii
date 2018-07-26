@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     let embedsay = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.avatarURL)
-        .setDescription(`${args[0]}`);
+        .setDescription(`${args[0].slice(1).join(' ')}`);
     
     message.delete().catch(O_o=>{});
     message.channel.send(embedsay);
