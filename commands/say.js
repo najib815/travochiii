@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
+    
+    let says = args[0].slice(1).join(' ');
 
     let specifyembed = new Discord.RichEmbed()
         .setColor(0xF55D5D)
@@ -12,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     let embedsay = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.avatarURL)
-        .setDescription(`${args[0].slice(1).join(' ')}`);
+        .setDescription(`${says}`);
     
     message.delete().catch(O_o=>{});
     message.channel.send(embedsay);
