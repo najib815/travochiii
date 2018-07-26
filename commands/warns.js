@@ -10,10 +10,10 @@ module.exports.run = async (bot, message, args) => {
   if(!warnedmember) return message.reply("Couldn't find them yo");
   
      if(!warnings[warnedmember.id]) warnings[warnedmember.id] = {
-    warns: 0
+    warnings: 0
   };
 
-  warns[warnedmember.id].warnings++;
+  warnings[warnedmember.id].warnings++;
 
   fs.writeFile("./warnings.json", JSON.stringify(warnings), (err) => {
     if (err) console.log(err)
