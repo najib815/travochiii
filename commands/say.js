@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorry, but you don't have permission to use this!") 
 
     let specifyembed = new Discord.RichEmbed()
         .setColor(0xF55D5D)
