@@ -13,7 +13,8 @@ module.exports.run = async (bot, message, args) => {
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${args[0]}`);
-
+    
+    message.delete().catch(O_o=>{});
     message.channel.send(embedsay);
 };
 
