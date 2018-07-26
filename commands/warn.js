@@ -25,7 +25,7 @@ if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorr
    let warniings = warns[warnedmember.id].warns;
     
     message.delete().catch(O_o=>{});
-    message.channel.send(`***${warnedmember.user.tag} was warned!*** \nHe already has ${warniings} Warnings`)
+    message.channel.send(`***${warnedmember.user.tag} was warned!*** \n**Already has ${warniings} Warnings**`)
     
     let wembed = new Discord.RichEmbed()
        .setTitle("⚠️ WARNING !!")
