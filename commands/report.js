@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`${rUser} Successfully Reported`);
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
-    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+    if(!reportschannel) return message.channel.send("Couldn't find reports channel. \nPlease creat one. \nName: `Reports`.");
 
 
     message.delete().catch(O_o=>{});
