@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = ';!';
+const db = require('quick.db');
 //const fetch = require('snekfetch');
 const fs = require("fs");
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
@@ -13,6 +14,16 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase(); 
+    
+    db.updateValue(message.author.id + message.guild.id, 1).then(i =>{
+    let levelup;
+        if (i.value == 25) levelup = 25;
+        if (!isNaN(levelup)) {
+        db.updateValue('userLevel_${message.author.id + message.guild.id}', 1).then(o => {
+        message.channel.send(`You Leveled Up Your Level now is ${o.value}`)
+        })
+        }
+    })
 
     
     if (sender.bot) return;
