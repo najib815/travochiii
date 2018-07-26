@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
     
-    let says = args[0].slice(1).join(' ');
+    let says = args[0].join(' ');
 
     let specifyembed = new Discord.RichEmbed()
         .setColor(0xF55D5D)
