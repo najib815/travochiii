@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let warns = require("./warnings.json");
 
 exports.run = async(bot, message, args) => {
 let userCom = bot.users.get(args[0]) || message.mentions.users.last();
