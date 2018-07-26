@@ -19,6 +19,7 @@ module.exports.run = async (bot, message, args) => {
 
 
     message.delete().catch(O_o=>{});
+    message.channel.send(`${rUser} Successfully Reported`);
     reportschannel.send(reportEmbed);
 
 }
