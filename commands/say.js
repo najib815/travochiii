@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
 
-    let specifyembed = new Discord.MessageEmbed()
+    let specifyembed = new Discord.RichEmbed()
         .setColor(0xF55D5D)
         .setDescription(`${message.author}, Please specify a word or message to embed.`)
         .setTimestamp();
 
     if (!args[0]) return message.channel.send(specifyembed);
 
-    let embedsay = new Discord.MessageEmbed()
+    let embedsay = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.avatarURL)
         .setDescription(`${args[0]}`);
