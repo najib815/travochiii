@@ -5,5 +5,5 @@ exports.run = async(bot, message, args) => {
       
       message.channel.send("OMG IT WORKS !!")
       }
-      }
+      })
 }
