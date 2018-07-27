@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 exports.run = async(bot, message, args) => {
       message.channel.send("TEST 123")
       await message.channel.send(msg => {
