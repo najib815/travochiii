@@ -1,7 +1,7 @@
 const Canvas = require('canvas');
 const fs = require('fs');
 
-exports.run = async(message, bot) => {
+exports.run = async(bot, message) => {
   let user;
   if (message.mentions.members.first().user.username) {
     user = message.mentions.users.first().username;
