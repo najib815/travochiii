@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 exports.run = async(bot, message) => {
     if (!message.mentions.users.first()) return message.channel.send('Mention someone.');
     let embed = new Discord.RichEmbed()
