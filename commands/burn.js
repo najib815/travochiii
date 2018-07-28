@@ -1,6 +1,10 @@
 exports.run = async(bot, message) => {
     if (!message.mentions.users.first()) return message.channel.send('Mention someone.');
-    message.channel.send(`**${message.author.username}** *burned* **${message.mentions.members.first().user.username}**\nYou need some ice for that bud? :snowflake:\nhttps://cdn.discordapp.com/attachments/186920285285384192/262348996784291840/image.gif`);
+    let embed = new Discord.RichEmbed()
+    .setDescription(`**${message.author.username}** *burned* **${message.mentions.members.first().user.username}**\nYou need some ice for that bud? :snowflake:`)
+    .setImage(`https://cdn.discordapp.com/attachments/186920285285384192/262348996784291840/image.gif`)
+    .setColor(`RANDOM`)
+    message.channel.send({embed});
 }
 
 exports.conf = {
