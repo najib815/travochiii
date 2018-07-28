@@ -1,7 +1,7 @@
-exports.run = async(bot, message, send) => {
+exports.run = async(bot, message) => {
     let member = message.member;
-    if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
-    if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")
+    if (!member.voiceChannel) return message.channel.send("**You must be in a voice channel for this command.**")
+    if (message.guild.member(bot.user).voiceChannel) return message.channel.send("**Im already playing something.**")
 
     member.voiceChannel.join().then(voiceConnection => {
         voiceConnection.playFile("./images/stopit.mp3")
