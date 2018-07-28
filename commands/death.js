@@ -4,7 +4,7 @@ const fs = require('fs');
 exports.run = async(message, bot) => {
   let user;
   if (message.mentions.members.first().user.username) {
-    user = message.mentions.members.first().user.username;
+    user = message.mentions.users.first().username;
   } else {
     return message.channel.send("You need to mention a user.");
   }
