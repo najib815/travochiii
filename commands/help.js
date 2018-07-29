@@ -1,6 +1,9 @@
 exports.run = async(bot, message, args) => {
+    
+if (!args[0]) {
+            message.channel.send("The Help Command is WIP.")
+            return;
 
-message.channel.send("The Help Command is WIP.");
 
     if (args[0] === "test") {
     
