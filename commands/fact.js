@@ -1,7 +1,7 @@
 const Canvas = require('canvas');
 const fs = require('fs');
 
-exports.run = async(bot, message) => {
+exports.run = async(bot, message, args) => {
    if (args.length < 1) {
     message.channel.send('You must provide some text.');
 }
