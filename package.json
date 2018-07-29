@@ -12,6 +12,7 @@
     "animequote": "^1.1.1",
     "currency-formatter": "^1.4.3",
     "discord.js": "^11.3.2",
+    "jimp": "^0.2.28",
     "dateformat": "^3.0.3",
     "normalize-url": "^2.0.1",
     "quick.db": "^6.3.2",
