@@ -1,7 +1,7 @@
 const Jimp = require('jimp')
 
-exports.run = (bot, message) => {
-    if (!message.args[0]) message.suffix = "I didn't provide text"
+exports.run = (bot, message, args) => {
+    if (!args[0]) message.suffix = "I didn't provide text"
   Jimp.read("./images/thesearch.png", function(err, image) {
     if (err) console.error(err);
     var text = new Jimp(160, 70, function(err, text) {
