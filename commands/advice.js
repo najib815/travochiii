@@ -7,7 +7,7 @@ exports.run = (bot, message, args) => {
             let cnj = JSON.parse(body)
             let aembed = new Disocrd.RichEmbed()
             .setTitle("[:grey_exclamation:] **Advice Machine**")
-            .setDescription(**${cnj.slip.advice}**)
+            .setDescription(`**${cnj.slip.advice}**`)
             .setColor('RANDOM');
             message.channel.send(aembed)
         } catch (e) {
