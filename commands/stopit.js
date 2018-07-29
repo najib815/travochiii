@@ -1,3 +1,5 @@
+const ffmpeg = require('ffmpeg');
+
 exports.run = async(bot, message) => {
     let member = message.member;
     if (!member.voiceChannel) return message.channel.send("**You must be in a voice channel for this command.**")
