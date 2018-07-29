@@ -11,7 +11,7 @@ if (!args[0]) {
           .addField("🎭Fun Commands🎲", "`;!help fun` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("🤫NSFW Commands🔥", "`;!help nsfw` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("😂Meme Commands👌", "`;!help memes` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)   
-          .addField("😴Mod Commands💬", "`;!help mod` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
+          .addField("👮Mod Commands🔒", "`;!help mod` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("📷Image Edit🎨", "`;!help image` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("🆗Text Edit🈂", "`;!help text` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
           .addField("⚒Utility Commands⛏", "`;!help utility` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
@@ -22,7 +22,7 @@ if (!args[0]) {
     let funembed = new Discord.RichEmbed()
           .setColor('RANDOM')
           .addField("🎭Fun Commands🎲", "`hug`,`kiss`,`feed`,`fmk`,`cookie`,`nom`,`slap`,`gayrate`,`notice`")
-          .setFooter(`Use ${bot.user.username}'s prefix before every Command \nWe will add more commands as soon as posible.`);
+          .setFooter(`Use ${bot.user.username}'s prefix before every single Command.. We will add more commands as soon as posible.`);
     message.channel.send(funembed);
     }
 }
