@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 
+
 exports.run = async(bot, message, args) => {
     
 if (!args[0]) {
     let helpembed = new Discord.RichEmbed()
           .setTitle(`**${bot.user.username}** Commands !`)
-          .setColor('RANDOM')
+          .setColor('#00BFFF')
           .setDescription("**The Help Command is WIP.** \nFor more information please contact **🍭「Satō」#9098** or **🍯「Hachimitsu」#4965** ");
             message.channel.send(helpembed)
             return;
