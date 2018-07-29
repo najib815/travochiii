@@ -9,7 +9,7 @@ if (!args[0]) {
           .setColor('#00BFFF')
           .addField("🐱Animals🐶", "`;!help mod` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
           .addField("🎭Fun🎲", "`;!help fun` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
-          .addField("🤫NSFW🔥", "`;!help nsfw` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
+          .addField("😈NSFW🔥", "`;!help nsfw` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("😂Memes👌", "`;!help memes` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)   
           .addField("👮Moderation🔒", "`;!help mod` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("📷Image🎨", "`;!help image` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
