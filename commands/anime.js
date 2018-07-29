@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
           message.channel.awaitMessages(filter, {
               "max": 20,
               "maxMatches": 1,
-              "time": 60000,
+              "time": 100000,
               "errors": ['time']
               }
             ).then(message => {
