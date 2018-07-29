@@ -9,7 +9,7 @@ exports.run = (bot, message, args) => {
         text.print(font, 0, 0, message.suffix, 130);
         image.composite(text, 65, 330)
           image.getBuffer(Jimp.AUTO, function(err, result) {
-            message.channel.sendFile(result);
+            message.channel.send(result);
           });
       });
     });
