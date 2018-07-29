@@ -7,7 +7,7 @@ if (!args[0]) {
     let helpembed = new Discord.RichEmbed()
           .setTitle(`**${bot.user.username}** Commands !`)
           .setColor('#00BFFF')
-          .addField("🕺Fun Commands💯", `${prefix}`fun` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)`, true)
+          .addField("🕺Fun Commands💯", `${prefix}help fun` ,`[Coming Soon](https://www.facebook.com/travolta.youssef.1)`, true)
           .addField("😈NSFW Commands🔥", "`nsfw` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
           .addField("😂Meme Commands👌", "`memes` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)   
           .addField("😴Coming Soon💬", "`Coming Soon` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
