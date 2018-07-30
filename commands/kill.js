@@ -2,15 +2,22 @@ const Discord = require('discord.js');
 const { get } = require("snekfetch");
 
 module.exports.run = async(bot, message, args) => {
-    let user = message.mentions.users.first().user.username || message.author.username;
-
+    let user = message.mentions.users.first() || message.isMentioned(message.author);
     const { body } = await get(`https://nekobot.xyz/api/imagegen?type=kms&url=${user.displayAvatarURL}`);
-   
-      let hembed = new Discord.RichEmbed()
+
+    if(!user) return 
+    let aembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
-          .setTitle(`**${user}** is about to Suicide.`)
+          .setTitle(`**${message.author.username}** is about to Suicide.`)
           .setImage(body.message)
-          .setTimestamp()
+          .setTimestamp();
+    message.channel.send(aembed);
+   
+    let hembed = new Discord.RichEmbed()
+          .setColor(`RANDOM`)
+          .setTitle(`**${message.mentions.users.first().user.username}** is about to Suicide.`)
+          .setImage(body.message)
+          .setTimestamp();
       message.channel.send(hembed)
   }
 
