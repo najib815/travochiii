@@ -12,7 +12,6 @@ module.exports.run = async(bot, message, args) => {
           .setImage(body.message)
           .setTimestamp()
       message.channel.send(hembed)
-      return;
   }
 
 
