@@ -3,8 +3,8 @@ const { get } = require("snekfetch");
 
 module.exports.run = async(bot, message, args) => {
     let user = message.mentions.users.first() || message.author;
-    
-    const { body } = await get(`https://nekobot.xyz/api/imagegen?type=kms&text=${user.displayAvatarURL}`);
+
+    const { body } = await get(`https://nekobot.xyz/api/imagegen?type=kms&url=${user.displayAvatarURL}`);
    
       let hembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
