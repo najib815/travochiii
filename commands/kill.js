@@ -27,4 +27,4 @@ let cookie = [
       })
       return;
   }
-  message.channel.send(`$author is fucked up`)
+  message.channel.send(`$author is fucked up`);
