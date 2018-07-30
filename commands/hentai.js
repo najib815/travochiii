@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
     
     let {body} = await superagent
     .get(`https://nekos.life/api/v2/img/Random_hentai_gif`);
-    if (!message.channel.nsfw) return message.chanel.send("🔞", "Cannot display NSFW content in a SFW channel.");
+    if (!message.channel.nsfw) return message.chanel.send("🔞 Cannot display NSFW content in a SFW channel.");
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
