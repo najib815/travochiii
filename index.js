@@ -17,6 +17,7 @@ bot.on('message', message => {
 
     if (message.isMentioned(bot.user)) {
           message.channel.send("yes?");
+    }
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return; 
 
