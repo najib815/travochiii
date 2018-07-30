@@ -85,8 +85,7 @@ let kill= [
         "$author kills $mention with their own foot.",
         "$mention dies due to lack of friends."
     ],
-  let author = message.guild.member(message.author.username);
-  let hugresult = Math.floor((Math.random() * cookie.length));
+  let hugresult = Math.floor((Math.random() * kill.length));
   if (!args[0]) {
       message.channel.send("```You have to mention someone first !```")
       return;
@@ -95,7 +94,7 @@ let kill= [
       const hembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
           .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a Sweet COOKIE :cookie: !!! `)
-          .setImage(cookie[hugresult])
+          .setImage(kill[hugresult])
           .setTimestamp()
       message.channel.send({
           embed: hembed
