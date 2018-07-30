@@ -1,5 +1,5 @@
-const request = require('snekfetch');
 const Discord = require('discord.js');
+const request = require('snekfetch');
 
 exports.run = (bot, message, args) => {
     let cn = request("http://api.adviceslip.com/advice", function (err, res, body) {
