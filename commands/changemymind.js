@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
 
     const { body } = await get("https://nekobot.xyz/api/imagegen?type=changemymind&text=${change}");
     
-    let cembed = nex Discord.RichEmbed()
+    let cembed = new Discord.RichEmbed()
        .setColor('RANDOM')
        .setTitle(`Who Can Change **${message.author.username}**'s Mind ?`)
        .setImage(body.message)
