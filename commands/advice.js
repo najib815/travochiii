@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const request = require('snekfetch');
 
 exports.run = (bot, message, args) => {
-    let cn = request("http://api.adviceslip.com/advice", function (err, res, body) {
+    let cn = request.get("http://api.adviceslip.com/advice", function (err, res, body) {
         try {
             let cnj = JSON.parse(body)
             let aembed = new Disocrd.RichEmbed()
