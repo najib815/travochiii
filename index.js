@@ -15,7 +15,8 @@ bot.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase(); 
 
-    
+    if (message.isMentioned(bot.user)) {
+          message.channel.send("yes?");
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return; 
 
