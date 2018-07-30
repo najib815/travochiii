@@ -102,5 +102,5 @@ let kill= [
       })
       return;
   }
-  message.channel.send(`${author} is fucked up`)
+  message.reply(`You DIED`)
 }
