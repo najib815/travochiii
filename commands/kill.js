@@ -85,7 +85,7 @@ let kill= [
         "$author kills $mention with their own foot.",
         "$mention dies due to lack of friends."
     ],
-  let author = (message.author);
+  var author = (message.author);
   let hugresult = Math.floor((Math.random() * cookie.length));
   if (!args[0]) {
       message.channel.send("```You have to mention someone first !```")
