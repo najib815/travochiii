@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const request = require('snekfetch');
+const { get } = require('snekfetch');
 
-exports.run = (bot, message, args) => {
-    let cn = request.get("http://api.adviceslip.com/advice", function (err, res, body) {
+exports.run = async(bot, message, args) => {
+    let cn = get("http://api.adviceslip.com/advice", function (err, res, body) {
         try {
             let cnj = JSON.parse(body)
             let aembed = new Disocrd.RichEmbed()
@@ -16,12 +16,3 @@ exports.run = (bot, message, args) => {
     });
 }
 
-exports.conf = {
-    userPerm: [],
-    botPerm: ["SEND_MESSAGES"],
-    coolDown: 0,
-    dm: true,
-    category: "Fun",
-    help: "Need a little advice?",
-    args: "",
-}
