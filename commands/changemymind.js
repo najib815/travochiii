@@ -13,5 +13,6 @@ module.exports.run = async(bot, message, args) => {
        .setTitle(`Who Can Change **${message.author.username}**'s Mind ?`)
        .setImage(body.message)
        .setTimestamp();
+       message.delete().catch(O_o=>{});
        message.channel.send(cembed);
     }
