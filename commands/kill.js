@@ -1,4 +1,6 @@
+const Discord = require("discord.js");
 
+module.exports.run = async(bot, message, args) => {
 let cookie = [
     "https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/DANCING_COOKIE.gif",
     "https://media.giphy.com/media/sBs1ITniVp7tm/giphy.gif",
@@ -27,4 +29,5 @@ let cookie = [
       })
       return;
   }
-  message.channel.send(`$author is fucked up`);
+  message.channel.send(`$author is fucked up`)
+}
