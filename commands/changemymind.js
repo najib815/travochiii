@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { get } = require("snekfetch");
 
 module.exports.run = async(bot, message, args) => {
-   let change = args.slice(1).join(' ');
+   let change = args.join(" ");
    if (!change) return message.channel.send("No text provided");
 
 
