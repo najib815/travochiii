@@ -11,9 +11,9 @@ exports.run = async(bot, message, args) => { // We're going to have to require t
     // Variables - These are the variables we will be using in the embed
     let trackIMG = `https://i.scdn.co/image/${user.presence.activity.assets.largeImage.slice(8)}`; // This fetches a url image using the largeImage asset after slicing off the first 8 characters.
     let trackURL = `https://open.spotify.com/track/${user.presence.activity.syncID}`; // This grabs the syncID and adds it to the end of a spotify URL.
-    let trackName = user.presence.activity.details;
-    let trackAuthor = user.presence.activity.state;
-    let trackAlbum = user.presence.activity.assets.largeText; // These all hold the info for the song, grabbed from the user's presence.
+    let trackName = user.presence.game.details;
+    let trackAuthor = user.presence.game.state;
+    let trackAlbum = user.presence.game.assets.largeText; // These all hold the info for the song, grabbed from the user's presence.
    
     // Create embed object
     const embed = new Discord.MessageEmbed() // This will create the start of the embed, we will now add to it.
