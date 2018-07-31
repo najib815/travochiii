@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
    
     let hembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
-          .setTitle(`**${message.mentions.users.first().user.username}** is about to Suicide.`)
+          .setTitle(`**${user}** is about to Suicide.`)
           .setImage(body.message)
           .setTimestamp();
       message.channel.send(hembed)
