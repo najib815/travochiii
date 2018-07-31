@@ -5,7 +5,7 @@ exports.run = async(bot, message, args) => {
         message.channel.send('Please provide some text to clapify');
     }
 
-    message.channel.send(args.map(randomizeCase).join(':clap:'));
+    message.channel.send(args.join(':clap:'));
 };
 
 exports.info = {
