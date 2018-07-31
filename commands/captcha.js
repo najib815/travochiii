@@ -4,7 +4,7 @@ const { get } = require("snekfetch");
 module.exports.run = async(bot, message, args) => {
    let user = message.mentions.users.first() || message.author;
    let avatar = user.displayAvatarURL;
-   let change = args.join(" ");
+   let change = args.slice(1).join(" ");
    if (!change) return message.channel.send("No text provided");
 
 
