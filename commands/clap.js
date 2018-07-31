@@ -4,7 +4,7 @@ exports.run = async(bot, message, args) => {
     if (args.length < 1) {
         message.channel.send('Please provide some text to clapify');
     }
-
+    message.delete().catch(O_o=>{});
     message.channel.send(args.join(':clap:'));
 };
 
