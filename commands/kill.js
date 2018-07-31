@@ -7,7 +7,7 @@ module.exports.run = async(bot, message, args) => {
     if (!args[0]) {
         let aembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
-          .setTitle(`**${message.author.username}** is about to Suicide.`)
+          .setTitle(`**${message.author}** is about to Suicide.`)
           .setImage(body.message)
           .setTimestamp();
      message.channel.send(aembed)
