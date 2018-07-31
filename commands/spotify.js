@@ -6,7 +6,7 @@ exports.run = async(bot, message, args) => { // We're going to have to require t
   let user = message.mentions.users.first() || message.author; // This checks if there is a mention, and takes the first one. Although, if there isn't a mention it uses the message author as a fallback.
  
   // Next, we need to verify that the specified user is listening to spotify.
-  if (user.presence.activity !== null && user.presence.activity.name === 'Spotify' && user.presence.activity.assets !== null) { // This checks all of these if statements, and if they are all true, it runs the following.
+  if (user.presence.game !== null && user.presence.game.type === 'LISTENING' && user.presence.game.name === 'Spotify' && user.presence.game.assets !== null) { // This checks all of these if statements, and if they are all true, it runs the following.
    
     // Variables - These are the variables we will be using in the embed
     let trackIMG = `https://i.scdn.co/image/${user.presence.activity.assets.largeImage.slice(8)}`; // This fetches a url image using the largeImage asset after slicing off the first 8 characters.
