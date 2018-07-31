@@ -12,8 +12,8 @@ module.exports.run = async(bot, message, args) => {
           .setImage(body.message)
           .setTimestamp();
      message.channel.send(aembed)
-        return;
-    }
+    }return;
+    
    
     let hembed = new Discord.RichEmbed()
           .setColor(`RANDOM`)
