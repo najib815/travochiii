@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
     
     let cembed = new Discord.RichEmbed()
        .setColor('RANDOM')
-       .setTitle(`OwO What is This`)
+       .setTitle(`Select All Images With **${change}**`)
        .setImage(body.message)
        .setTimestamp();
        message.delete().catch(O_o=>{});
