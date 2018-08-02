@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
-module.exports.run = (bot, message) => {
+module.exports.run = async(bot, message) => {
         randomPuppy('awwnime')
             .then(url => {
                 const embed = new Discord.MessageEmbed()
@@ -10,4 +10,5 @@ module.exports.run = (bot, message) => {
                     .setImage(url)
                     .setColor('#A187E0')
                 return message.channel.send({ embed })
+})
 }
