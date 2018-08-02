@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args) => {
 	if (!args[0]) {
 		return message.reply('please tag someone to kill.')
 	}
-	message.channel.send(message.randomInArray(kill)
+	message.channel.send(kill.randomInArray(kill)
 		.replace(/\$mention/g, message.mentions.users.first().username)
 		.replace(/\$author/g, message.author.username))
 }
