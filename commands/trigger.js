@@ -1,7 +1,7 @@
 const Jimp = require('jimp');
 const GIFEncoder = require('gifencoder');
 
-exports.run = async (bot, message, args) => {
+exports.run = async (bot, message) => {
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
