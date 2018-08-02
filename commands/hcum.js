@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, args) => {
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("I-I'm Cummiing :sweat_drops: :sweat_drops: <:NOSWEARING:379103012007706624> ")
+    .setTitle("Nyaa~ s-senpai... :sweat_drops: :sweat_drops:")
     .setImage(body.url)
     .setColor("RANDOM")
     .setFooter(`Requested by ${message.author.tag} | Powered by Nekos.life`);
