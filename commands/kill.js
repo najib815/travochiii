@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args) => {
          const pokem = kill[poke];
 	
           if (!args[0]) {
-            message.channel.send("please tag someone to kill.")
+            message.reply("please tag someone to kill.")
             return;
        }
 	if (!message.isMentioned(message.author)) {
