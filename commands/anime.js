@@ -1,7 +1,7 @@
 const Kitsu = require('kitsu.js');
 const kitsu = new Kitsu();
 
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
     if (args.length < 1) return message.reply('You must add a word to search for');
     message.channel.send(":ok_hand: Fetching anime from Kitsu!").then(message => {
     kitsu.searchAnime(args.join(" "))
@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
           message.channel.awaitMessages(filter, {
               "max": 20,
               "maxMatches": 1,
-              "time": 100000,
+              "time": 60000,
               "errors": ['time']
               }
             ).then(message => {
