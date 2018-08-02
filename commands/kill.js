@@ -1,4 +1,4 @@
-const { kill } = require('/arrays.json')
+const { kill } = require('../commands/arrays.json')
 
 module.exports.run = (bot, message, args) => {
 
