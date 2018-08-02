@@ -48,45 +48,6 @@ bot.on('message', message => {
       message.channel.send('Is that a question?')
      }
 }
-    
-    if (msg.startsWith(prefix + 'NOM')) {
-        let nom = [
-            "https://pa1.narvii.com/6412/817cca674a16306beabb40f1bc42a7b5ef9a4191_hq.gif",
-            "https://pa1.narvii.com/6239/bd52e040d9f0e201a5374c849c89102938d8ed86_hq.gif",
-            "https://78.media.tumblr.com/35a1a39e5832dee49e04f4958b4e9381/tumblr_omss2uGQI21v9ypo0o1_500.gif",
-            "https://pa1.narvii.com/5850/5b1b0989abeb70dd6cedc66bcce899fb16af3876_hq.gif",
-            "http://cdn.smosh.com/wp-content/uploads/bloguploads/nom-ferret.gif",
-            "https://i.pinimg.com/originals/3c/67/80/3c6780674ef3fe9631c99e76825d73f1.gif",
-            "http://i.imgur.com/tKsIDec.gif",
-            "https://vignette.wikia.nocookie.net/glee/images/9/97/Anime_nom_gif.gif",
-            "https://i.gifer.com/IDRa.gif",
-            "https://media.tenor.com/images/a9c1ff73cfbb6dd3eb6212d7ef1daf35/tenor.gif",
-            "https://i.gifer.com/EQn9.gif",
-            "http://i.imgur.com/L9dLr1J.gif",
-            "https://steamusercontent-a.akamaihd.net/ugc/187297348914278278/1E22A22A02C7E8387401740C39659888CAC5DD71/",
-            "https://78.media.tumblr.com/abf94574340b87a8a0649d69c5703986/tumblr_ojv4amOX0D1uxybkho2_500.gif",
-            "https://www.maxofs2d.net/subdomains/img/gif/misc/reaction_kittynibbling.gif",
-          
-        ]
-        let nomresult = Math.floor((Math.random() * nom.length));
-        if (!args[0]) {
-            message.channel.send("```Mention who you want to nom nom UwU !!```")
-            return;
-        }
-        if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
-            const hembed = new Discord.RichEmbed()
-                .setColor(`RANDOM`)
-                .setTitle(`${message.author.username} Noms ${message.mentions.members.first().user.username} ...Meeehh UwU !!! `)
-                .setImage(nom[nomresult])
-                .setTimestamp()
-            message.channel.send({
-                embed: hembed
-            })
-            return;
-        }
-        message.channel.send("```You Can't Nom Yourself ...UwU !!```")
-    } 
-
 
     if (msg.startsWith(prefix + 'COOKIE')) {
         let cookie = [
