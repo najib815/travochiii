@@ -7,14 +7,14 @@ module.exports.run = async(bot, message, args) => {
     let respect = meow.join(' ');
      if (!respect) {
             const rembed = new Discord.RichEmbed()
-                .setAuthor(`${message.author.username} has paid their respects.`, message.author.AvatarURL)
+                .setAuthor(`${message.author.username} has paid their respects.`, `message.author.displayAvatarURL`)
                 .setColor('#4E373B')
                 .setFooter(`Press F to pay your respects.`);
             message.channel.send({ rembed }).then(m => m.react("🇫"))
          return;
               } 
             const embed = new Discord.RichEmbed()
-                .setAuthor(`\u2000`, message.author.AvatarURL)
+                .setAuthor(`\u2000`, `message.author.displayAvatarURL`)
                 .setColor('#4E373B')
                 .setDescription(`${message.author} has paid their respects to ${respect}`)
                 .setFooter(`Press F to pay your respects.`);
