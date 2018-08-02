@@ -1,40 +1,51 @@
+const Discord = require('discord.js');
 const Kitsu = require('kitsu.js');
 const kitsu = new Kitsu();
+var aq = require('animequote');
 
 exports.run = async(bot, message, args) => {
-    if (args.length < 1) return message.reply('You must add a word to search for');
-    message.channel.send(":ok_hand: Fetching anime from Kitsu!").then(message => {
-    kitsu.searchAnime(args.join(" "))
-      .then(result => {
-          const filter = message => {
-            if(message.content === "1" || message.content === "2" || message.content === "3" || message.content === "4" || message.content === "5") {
-              return true
-            } else {
-              return false
-            }
-          }
-          message.edit(`Found some animes! Type 1-5 on the text channel! (Cancels at 60 seconds!)\n1: ${result[0].titles.english}/${result[0].titles.japanese}\n2: ${result[1].titles.english}/${result[1].titles.japanese}\n3: ${result[2].titles.english}/${result[2].titles.japanese}\n4: ${result[3].titles.english}/${result[3].titles.japanese}\n5: ${result[4].titles.english}/${result[4].titles.japanese}`)
-          message.channel.awaitMessages(filter, {
-              "max": 20,
-              "maxMatches": 1,
-              "time": 60000,
-              "errors": ['time']
-              }
-            ).then(message => {
-                if (message.size === 0) return
-                const number = Number(message.first().content) - 1
-				message.channel.send(`Anime Search Query!\n\n**Titles:**\n**Japanese**: ${result[number].titles.japanese}\n**English**: ${result[number].titles.english}\n\n**Show Type**: ${result[number].showType}\n\n**Popularity Rank**: ${result[number].popularityRank}\n\n**Synopsis**: ${result[number].synopsis}`)
-              }
-            )
-            .catch(() => message.reply("Command Canceled due to timer!"))
+	
+        var search = message.content.split(/\s+/g).slice(1).join(" ");
 
+        if (!search) {
+
+            kitsu.searchAnime(aq().quoteanime).then(result => {
+
+                var anime = result[0]
+
+                var embed = new Discord.RichEmbed()
+                    .setColor('#FF9D6E')
+                    .setAuthor(`${anime.titles.english} | ${anime.showType}`, anime.posterImage.original)
+                    .setDescription(anime.synopsis.replace(/<[^>]*>/g, '').split('\n')[0])
+                    .addField('❯\u2000\Information', `•\u2000\**Japanese Name:** ${anime.titles.romaji}\n\•\u2000\**Age Rating:** ${anime.ageRating}\n\•\u2000\**NSFW:** ${anime.nsfw ? 'Yes' : 'No'}`, true)
+                    .addField('❯\u2000\Stats', `•\u2000\**Average Rating:** ${anime.averageRating}\n\•\u2000\**Rating Rank:** ${anime.ratingRank}\n\•\u2000\**Popularity Rank:** ${anime.popularityRank}`, true)
+                    .addField('❯\u2000\Status', `•\u2000\**Episodes:** ${anime.episodeCount ? anime.episodeCount : 'N/A'}\n\•\u2000\**Start Date:** ${anime.startDate}\n\•\u2000\**End Date:** ${anime.endDate ? anime.endDate : "Still airing"}`, true)
+                    .setImage(anime.posterImage.original);
+                return message.channel.send(`Try watching **${anime.titles.english}**!`, { embed: embed });
+            })
+
+        } else {
+            var search = message.content.split(/\s+/g).slice(1).join(" ");
+
+            kitsu.searchAnime(search).then(result => {
+                if (result.length === 0) {
+                    return message.channel.send(`No results found for **${search}**!`);
+                }
+
+                var anime = result[0]
+
+                var embed = new Discord.RichEmbed()
+                    .setColor('#FF9D6E')
+                    .setAuthor(`${anime.titles.english ? anime.titles.english : search} | ${anime.showType}`, anime.posterImage.original)
+                    .setDescription(anime.synopsis.replace(/<[^>]*>/g, '').split('\n')[0])
+                    .addField('❯\u2000\Information', `•\u2000\**Japanese Name:** ${anime.titles.romaji}\n\•\u2000\**Age Rating:** ${anime.ageRating}\n\•\u2000\**NSFW:** ${anime.nsfw ? 'Yes' : 'No'}`, true)
+                    .addField('❯\u2000\Stats', `•\u2000\**Average Rating:** ${anime.averageRating}\n\•\u2000\**Rating Rank:** ${anime.ratingRank}\n\•\u2000\**Popularity Rank:** ${anime.popularityRank}`, true)
+                    .addField('❯\u2000\Status', `•\u2000\**Episodes:** ${anime.episodeCount ? anime.episodeCount : 'N/A'}\n\•\u2000\**Start Date:** ${anime.startDate}\n\•\u2000\**End Date:** ${anime.endDate ? anime.endDate : "Still airing"}`, true)
+                    .setImage(anime.posterImage.original);
+                return message.channel.send({ embed });
+            }).catch(err => {
+                console.log(err)
+                return message.channel.send(`No results found for **${search}**!`);
+            });
         }
-      )
-      .catch(() => {
-          message.edit("Did you spell the anime right? I couldn't get your search query!")
-          message.react("❓")
-          }
-        );
-      }
-)
 }
