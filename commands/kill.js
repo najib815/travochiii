@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args) => {
 	if (args.join(' ')) {
 		return message.reply('no you can do it yourself. Please tag someone else to kill.', message)
 	}
-	if (!msg.mentions[0]) {
+	if (!message.mentions.users.first()) {
 		return message.reply('please tag someone to kill.', message)
 	}
 	message.channel.send(bot.randomInArray(kill)
