@@ -10,7 +10,8 @@ module.exports.run = async(bot, message, args) => {
                 .setAuthor(`${message.author.username} has paid their respects.`, message.author.AvatarURL)
                 .setColor('#4E373B')
                 .setFooter(`Press F to pay your respects.`);
-            message.channel.send({ rembed }).then(m => m.react("🇫"));
+            message.channel.send({ rembed }).then(m => m.react("🇫"))
+         return;
               } 
             const embed = new Discord.RichEmbed()
                 .setAuthor(`\u2000`, message.author.AvatarURL)
