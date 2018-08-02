@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
 const { respect } = args;
         if (respect == 'none') {
             const embed = new Discord.RichEmbed()
-                .setAuthor(`${message.author.username} has paid their respects.`, `message.author.AvatarURL({ format: 'png' })`)
+                .setTitle(`**${message.author.username}** has paid their respects.`)
                 .setColor('#4E373B')
                 .setFooter(`Press F to pay your respects.`);
             message.channel.send({ embed }).then(m => m.react("🇫"));
@@ -14,7 +14,7 @@ const { respect } = args;
 
         } else {
             const embed = new Discord.RichEmbed()
-                .setAuthor(`\u2000`, `message.author.AvatarURL({ format: 'png' })`)
+                .setTitle(`\u2000`)
                 .setColor('#4E373B')
                 .setDescription(`${message.author} has paid their respects to ${respect}`)
                 .setFooter(`Press F to pay your respects.`);
