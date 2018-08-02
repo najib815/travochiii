@@ -15,7 +15,7 @@ exports.run = async (bot, message) => {
 
         const args = message.content.split(" ").slice(1)
         let user = message.mentions.users.first() || message.author;
-        let avatarurl = (message.mentions.users.size > 0 ? user.displayAvatarURL);
+        let avatarurl = (message.mentions.users.size > 0 ? user.displayAvatarURL({ format: 'png' }) : user.displayAvatarURL({ format: 'png' }));
         if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
             avatarurl = args.join(' ').replace(/gif|webp/g, 'png')
         }
