@@ -1,5 +1,9 @@
 const Jimp = require('jimp');
 const GIFEncoder = require('gifencoder');
+const options = {
+    size: 256,
+    frames: 8
+}
 
 exports.run = async (bot, message) => {
         function getRandomInt(min, max) {
@@ -15,7 +19,7 @@ exports.run = async (bot, message) => {
 
         const args = message.content.split(" ").slice(1)
         let user = message.mentions.users.first() || message.author;
-        let avatarurl = (message.mentions.users.size > 0 ? user.displayAvatarURL({ format: 'png' }) : user.displayAvatarURL({ format: 'png' }));
+        let avatarurl = (user.displayAvatarURL);
         if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
             avatarurl = args.join(' ').replace(/gif|webp/g, 'png')
         }
