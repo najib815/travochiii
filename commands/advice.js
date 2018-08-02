@@ -6,7 +6,7 @@ exports.run = async(bot, message, args) => {
     
             let aembed = new Disocrd.RichEmbed()
             .setTitle("[:grey_exclamation:] **Advice Machine**")
-            .setDescription(`**${body.slip.advice}**`)
+            .setDescription(`body.slip`)
             .setColor('RANDOM');
     
             message.channel.send(aembed)
