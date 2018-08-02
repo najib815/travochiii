@@ -30,7 +30,7 @@ module.exports.run = async(bot, message, args) => {
 				if (data.platforms.linux) platforms.push('Linux');
 			}
 
-            const embed = new Discord.MessageEmbed()
+            const embed = new Discord.RichEmbed()
                 .setColor(0x101D2F)
                 .setAuthor('Steam', 'https://i.imgur.com/xxr2UBZ.png', 'http://store.steampowered.com/')
                 .setTitle(data.name)
