@@ -4,7 +4,7 @@ const randomPuppy = require('random-puppy');
 module.exports.run = async(bot, message) => {
         randomPuppy('awwnime')
             .then(url => {
-                const embed = new Discord.MessageEmbed()
+                const embed = new Discord.RichEmbed()
                     .setFooter(`awwnime`)
                     .setDescription(`[Image URL](${url})`)
                     .setImage(url)
