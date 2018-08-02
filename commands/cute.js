@@ -6,7 +6,7 @@ module.exports.run = async(bot, message) => {
             .then(url => {
                 const embed = new Discord.RichEmbed()
                     .setFooter(`awwnime`)
-                    .setDescription(`[Image URL](${url})`)
+                    .setDescription(`[Cute Things](${url})`)
                     .setImage(url)
                     .setColor('#A187E0')
                 return message.channel.send({ embed })
