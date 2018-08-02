@@ -5,10 +5,10 @@ module.exports.run = (bot, message, args) => {
          const poke = rand > 0 ? rand : Math.floor(Math.random() * 82);
          const pokem = kill[poke];
 
-	if (!message.mentions.users.first()) {
+	if (args.join(' ').includes('me')) {
 		return message.reply('no you can do it yourself. Please tag someone else to kill.')
 	}
-	if (!args[0]) {
+	if (!message.mentions[0]) {
 		return message.reply('please tag someone to kill.')
 	}
 	message.channel.send(pokem
