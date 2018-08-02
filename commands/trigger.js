@@ -14,8 +14,8 @@ exports.run = async (bot, message) => {
         await message.channel.startTyping()
 
         const args = message.content.split(" ").slice(1)
-
-        let avatarurl = (message.mentions.users.size > 0 ? message.mentions.users.first().displayAvatarURL({ format: 'png' }) : message.author.displayAvatarURL({ format: 'png' }));
+        let user = message.mentions.users.first() || message.author;
+        let avatarurl = (user.displayAvatarURL);
         if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
             avatarurl = args.join(' ').replace(/gif|webp/g, 'png')
         }
