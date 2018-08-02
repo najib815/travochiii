@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "animequote": "^1.1.1",
+    "ffmpeg-binaries": "^4.0.0",
     "currency-formatter": "^1.4.3",
     "discord.js": "^11.3.2",
     "jimp": "^0.2.28",
