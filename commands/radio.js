@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const ffmpeg = require('ffmpeg');
 
 exports.run = async (bot, message, args) => {
-	if (args === 'mix') {
+	if (args[0] === "mix") {
         radioName = "Mix 102.3";
       	radioStream = "http://icecast.arn.com.au/1023.mp3";
   	} else if (args === 'nova919') {
