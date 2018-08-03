@@ -22,7 +22,7 @@ var response = [`**${message.author.username}** throws the net at **${user.usern
 const embed2 = new Discord.RichEmbed()
 .setColor(0xFFB200)
 .setTimestamp()
-.addField('**${message.author.username}** throws the Net at **${user.username}**', response[~~(Math.random() * response.length)])
+.addField(`**${message.author.username}** throws the Net at **${user.username}**`, response[~~(Math.random() * response.length)])
 .setFooter(`Thrown by ${message.author.username}`)
 message.channel.send(embed2);
 }
