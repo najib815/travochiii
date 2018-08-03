@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 const ffmpeg = require('ffmpeg');
 
 exports.run = async(bot, message) => {
