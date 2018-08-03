@@ -17,7 +17,7 @@ exports.run = async(bot, message, args) => {
         var response = [`**${message.author.username}** ${action[~~(Math.random() * action.length)]}! \n**${user.username}** loses **${health[~~(Math.random() * health.length)]}** hp. \n**${user.username}** ${action[~~(Math.random() * action.length)]}. \n**${message.author.username}** loses **${health[~~(Math.random() * health.length)]}** hp.`];
     }
     else { 
-        var response = [`**${message.author.username}** uses **${item}${actitem[~~(Math.random() * actitem.length)]}!** \n**${user.username}** loses ${health[~~(Math.random() * health.length)]} hp. \n**${user.username}** ${action[~~(Math.random() * action.length)]}. **${message.author.username}** loses ${health[~~(Math.random() * health.length)]} hp.`];
+        var response = [`**${message.author.username}** uses **${item}**${actitem[~~(Math.random() * actitem.length)]}! \n**${user.username}** loses ${health[~~(Math.random() * health.length)]} hp. \n**${user.username}** ${action[~~(Math.random() * action.length)]}. **${message.author.username}** loses ${health[~~(Math.random() * health.length)]} hp.`];
     }
 
     const embed = new Discord.RichEmbed()
