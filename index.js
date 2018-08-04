@@ -93,7 +93,7 @@ bot.on('ready', () => {
     bot.user.setActivity(games[Math.floor(Math.random() * (games.length))]).then(() => {
         setTimeout(() => {
             bot.user.setActivity(games[Math.floor(Math.random() * (games.length))])
-        }, 50000)
+        }, 600000)
     })
     bot.user.setStatus('dnd')
     //bot.user.setPresence({ game: { name: `Dev by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
