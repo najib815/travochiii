@@ -91,8 +91,7 @@ bot.on('message', message => {
 bot.on('ready', () => {
     console.log('I AM READY !')
     bot.user.setActivity(games[Math.floor(Math.random() * (games.length))]).then(() => {
-        setTimeout(() => {
-            bot.user.setActivity(games[Math.floor(Math.random() * (games.length))])
+        setTimeout(() => {db.checkServers(bot)}, 10000);
         }, 2000)
     })
     bot.user.setStatus('dnd')
