@@ -10,7 +10,7 @@ const games = require("./games.json");
 
 
 
-bot.on('message', message => {
+bot.on('message', message => 
     let msg = message.content.toUpperCase();
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
