@@ -2,15 +2,15 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async(bot, message, args) => {
-const { respect } = args;
-        if (respect == 'none') {
+let respect = args.join(" ").slice(22);
+        if (!respect) {
             const embed = new Discord.RichEmbed()
                 .setTitle(`**${message.author.username}** has paid their respects.`)
                 .setColor('#4E373B')
                 .setFooter(`Press F to pay your respects.`);
             message.channel.send({ embed }).then(m => m.react("🇫"));
 
-            return null;
+            return;
 
         } else {
             const embed = new Discord.RichEmbed()
@@ -20,7 +20,7 @@ const { respect } = args;
                 .setFooter(`Press F to pay your respects.`);
             message.channel.send({ embed }).then(m => m.react("🇫"));
 
-            return null;
+            return;
 }
 
 }
