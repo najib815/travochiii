@@ -92,8 +92,8 @@ bot.on('ready', () => {
     console.log('I AM READY !')
     bot.setInterval(() => {
 	const activity = games[Math.floor(Math.random() * games.length)];
-	client.user.setActivity(activity.text, { type: activity.type });
-}, 60000);
+	bot.user.setActivity(activity.text, { type: activity.type });
+}, 5000);
     bot.user.setStatus('dnd')
     //bot.user.setPresence({ game: { name: `Dev by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
 })
