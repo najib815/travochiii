@@ -25,7 +25,7 @@ bot.on('message', message => {
     
     try {
         let commandFile = require(`./commands/${cmd}.js`); 
-        commandFile.run(bot, message, args); 
+        commandFile.run(bot, message, args, prefix); 
     } catch(e) { 
         message.channel.send('Invalid Command');
         console.log(e.message);
