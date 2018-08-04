@@ -5,7 +5,7 @@ const db = require('quick.db');
 //const fetch = require('snekfetch');
 const fs = require("fs");
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
-const games = = require("./games.json");
+const games = require("./games.json");
 
 
 
