@@ -5,13 +5,13 @@ module.exports.run = async(bot, message, args) => {
         
         let respect = args.join(" ");
         if (!respect) {
-            const embed = new Discord.RichEmbed()
+            let embed = new Discord.RichEmbed()
                 .setTitle(`**${message.author.username}** has paid their respects.`)
                 .setColor('#4E373B')
                 .setFooter(`Press F to pay your respects.`);
             return message.channel.send({ embed }).then(m => m.react("🇫"));
         }
-            const hembed = new Discord.RichEmbed()
+            let hembed = new Discord.RichEmbed()
                 .setTitle(`\u2000`)
                 .setColor('#4E373B')
                 .setDescription(`${message.author} has paid their respects to ${respect}`)
