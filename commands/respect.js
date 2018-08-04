@@ -13,11 +13,11 @@ module.exports.run = async(bot, message, args) => {
 
             return;
         }
-            const embed = new Discord.RichEmbed()
+            const hembed = new Discord.RichEmbed()
                 .setTitle(`\u2000`)
                 .setColor('#4E373B')
                 .setDescription(`${message.author} has paid their respects to ${respect}`)
                 .setFooter(`Press F to pay your respects.`);
-            message.channel.send({ embed }).then(m => m.react("🇫"));
+            message.channel.send({ hembed }).then(m => m.react("🇫"));
 
 }
