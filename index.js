@@ -90,12 +90,14 @@ bot.on('message', message => {
 })
 bot.on('ready', () => {
     console.log('I AM READY !')
-    bot.user.setActivity(games[Math.floor(Math.random() * (games.length))]).then(() => {
-        setTimeout(() => 10000);
+    
+    //bot.user.setActivity(games[Math.floor(Math.random() * (games.length))]).then(() => {
+       // setTimeout(() => 10000);
         
-    })
+   // })
+    
     bot.user.setStatus('dnd')
-    //bot.user.setPresence({ game: { name: `Dev by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
+    bot.user.setPresence({ game: { name: `Dev by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
 })
 bot.on("guildMemberAdd", function(member) {
     let role = member.guild.roles.find("name", "Need Verification");
