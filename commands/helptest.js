@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 
-exports.run = async(bot, message, args) => {
+exports.run = async(bot, message, args, prefix) => {
     
 if (!args[0]) {
     let helpembed = new Discord.RichEmbed()
@@ -23,7 +23,7 @@ if (!args[0]) {
     let funembed = new Discord.RichEmbed()
           .setColor('RANDOM')
           .addField("🎭Fun Commands🎲", "`hug`,`kiss`,`feed`,`fmk`,`cookie`,`nom`,`slap`,`gayrate`,`notice`")
-          .setFooter(`Use ${bot.user.username}'s prefix before every single Command.. We will add more commands as soon as posible.`);
+          .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
     }
 }
