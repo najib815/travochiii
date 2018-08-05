@@ -23,7 +23,7 @@ exports.run = (bot, message, args) => {
         let gifrnd = gifs.map(gif => gif.url)
         if (message.mentions.users.first()) {
             let embed = new Discord.RichEmbed()
-            .setTitle(`**${message.author.username}** fucked ${message.mentions.users.first().username}`)
+            .setTitle(`**${message.author.username}** fucked **${message.mentions.users.first().username}**`)
             .setImage(gifrnd[Math.floor(Math.random() * gifrnd.length)])
             .setColor(0xFFA500)
             message.channel.send({
