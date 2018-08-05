@@ -10,9 +10,9 @@ module.exports.run = async(bot, message, args) => {
    if (!text) return message.channel.send(embed).then(m => m.react("🇫"));
     
             let hembed = new Discord.RichEmbed()
-                .setTitle(`\u2000`)
+                .setTitle(`**${message.author.username}** has paid their respects to **${text}**`)
                 .setColor('RANDOM')
-                .addField(`**${message.author.username}** has paid their respects to **${text}**`)
+                //.addField(``)
                 .setFooter(`Press F to pay your respects.`);
                message.channel.send(hembed).then(m => m.react("🇫"));
 }
