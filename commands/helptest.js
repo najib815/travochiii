@@ -22,7 +22,7 @@ if (!args[0]) {
 } if (args[0] === "fun") {
     let funembed = new Discord.RichEmbed()
           .setColor('RANDOM')
-          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate`,`kill`,`love`,`notice`,`nya`,`potato`,`rem`")
+          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate` \n`kill`,`love`,`notice`,`nya`,`potato`,`rem`")
           .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "animals") {
@@ -34,13 +34,19 @@ if (!args[0]) {
 } else if (args[0] === "nsfw") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`spank`,`tits`,`trap`")
+            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`spank`,`tits` \n`trap`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "memes") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("🎭Memey Commands🎲", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`,``")
+            .addField("🎭Memey Commands🎲", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed);
+} else if (args[0] === "react" | "reaction" | "reactions") {
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("😂 Reactions 😭", "`cry`,`hug`,`kiss`,`lick`,`nom`,`slap`,`stare`,`tickle`,`poke`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 }
