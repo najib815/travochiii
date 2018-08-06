@@ -10,7 +10,7 @@ exports.run = async(bot, message, args) => {
     // Mention the user that you want to verify
     let toverify = message.guild.member(message.mentions.users.first());
     // Find the role 'Verified User'
-    let verifyrole = message.guild.roles.find(`name`, "Verified User" || "Member");
+    let verifyrole = message.guild.roles.find(`name`, "Verified User" == "Member");
     if (!verifyrole) return message.reply('You need to Creat a roll and name it "Verified User"').then(m => m.delete(5000));
     // Check if a user has been mentioned.
     if (!toverify) return message.reply("You need to mention a user.");
