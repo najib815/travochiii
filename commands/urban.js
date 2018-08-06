@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async(bot, message, args) => {
+exports.run = async(bot, message, args, prefix) => {
   var define = message.content.substring(prefix.length + 5);
   var urban = require('urban'),
   define = urban(define);
