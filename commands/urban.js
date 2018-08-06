@@ -21,7 +21,7 @@ exports.run = async (bot, message, args) => {
     .addField('Definition:', `${res.definition}`)
     .addField('Example:', `${res.example}`)
     //.setDescription(`**Definition:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`)
-    .setField('Author', `res.author`, true)
+    .setField('Author', `${res.author}`, true)
     .addField('Rating', `**\`Upvotes: ${res.thumbsUp} | Downvotes: ${res.thumbsDown}\`**`) 
 
   if (res.tags.length > 0 && res.tags.join(' ').length < 1024) {
