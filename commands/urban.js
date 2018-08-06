@@ -28,24 +28,24 @@ exports.run = async(bot, message, args, prefix) => {
             
     try {
         const embed = new Discord.RichEmbed()
-            .setTitle(`${defs.word} by ${defs.author}`)
+            .setTitle(`**${defs.word}** by **${defs.author}**`)
             .setDescription(defs.definition)
-            .addField('❯\u2000\Example(s)', defs.example ? defs.example : 'N/A')
-            .addField('❯\u2000\Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
-            .addField('❯\u2000\Link', `**${defs.urbanURL}**`)
-            .setColor('#e86222')
-            .setFooter('Urban Dictionary', 'https://a.safe.moe/1fscn.png');
+            .addField('Example(s)', defs.example ? defs.example : 'N/A')
+            .addField('Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
+            .addField('Link', `**${defs.urbanURL}**`)
+            .setColor('RANDOM')
+            .setFooter('Urban Dictionary', 'https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-01-11/297387706245_85899a44216ce1604c93_512.jpg');
         return message.channel.send(resultMessage, { embed });
 
     } catch (err) {
         const embed = new Discord.RichEmbed()
-            .setTitle(`${defs.word} by ${defs.author}`)
+            .setTitle(`**${defs.word}** by **${defs.author}**`)
             .setDescription(defs.definition.split('\n')[0])
-            .addField('❯\u2000\Example(s)', defs.example ? defs.example : 'N/A')
-            .addField('❯\u2000\Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
-            .addField('❯\u2000\Link', `**${defs.urbanURL}**`)
-            .setColor('#e86222')
-            .setFooter('Urban Dictionary', 'https://a.safe.moe/1fscn.png');
+            .addField('Example(s)', defs.example ? defs.example : 'N/A')
+            .addField('Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
+            .addField('Link', `**${defs.urbanURL}**`)
+            .setColor('RANDOM')
+            .setFooter('Urban Dictionary', 'https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-01-11/297387706245_85899a44216ce1604c93_512.jpg');
         return message.channel.send(resultMessage, { embed });
     }
 }
