@@ -15,7 +15,7 @@ exports.run = async (bot, message, args) => {
   });
 
 
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
     .setColor('RANDOM') 
     .setTitle(res.word)
     .setUrl(res.urbanURL) 
