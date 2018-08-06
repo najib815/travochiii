@@ -1,51 +1,28 @@
-const urban = require('urban')
+const Discord = require('discord.js');
 
 exports.run = async(bot, message, args) => {
-  try {
-    var search = urban(message.suffix);
-  } catch (e) {
-    return message.channel.send("**There were no results for this search term**");
-  }
-  if (!search || !search.first || typeof search.first !== "function") return;
-  search.first(function (json) {
-    if (json) {
-      if (!json.definition || !json.example) return;
-      if (json.definition.length > 1000) json.definition = json.definition.substr(0, 1000);
-      if (json.example.length > 1000) json.example = json.example.substr(0, 1000);
-      message.channel.send("", {
-        "embed": {
-          "title": "**" + message.suffix + "**",
-          "url": json.permalink,
-          "color": 0xD71A75,
-          "author": {
-            "name": "Urban Dictionary",
-            "icon_url": message.guild.iconURL
-          },
-          "fields": [{
-            "name": "**Definition**",
-            "value": json.definition
-          }, {
-            "name": "**Example**",
-            "value": json.example
-          }],
-          "footer": {
-            "text": "Powered By Urban Dictionary",
-            "icon_url": "http://www.extension.zone/wp-content/uploads/2015/11/Urban-Dictionary-logo.png"
-          }
-        }
-      })
-    } else {
-      message.channel.send("**There were no results for this search term**")
+  var define = message.content.substring(prefix.length + 5);
+  var urban = require('urban'),
+  define = urban(define);
+  
+  define.first(function(json) {
+    try {
+      const embed = new Discord.RichEmbed()
+          .setColor(0xFFB200)
+          .setTimestamp()
+          .addField(`Definition of ${json.word}`, `${json.definition}`)
+          .setFooter(`Made by: ${json.author}`);
+      
+      if (json.example.length > 0) { embed.addField("Example", `${json.example}`); }
+      message.channel.send({embed});
+    }
+    catch (err) {
+      var reason = args.join(' ');
+      const embed1 = new Discord.RichEmbed()
+        .setColor(0xFFB200)
+        .setTimestamp()
+        .addField(`:(`, `I couldn't find the definition of **${reason}.**`);
+      message.channel.send({embed: embed1});
     }
   });
-}
-
-exports.conf = {
-  userPerm: [],
-  botPerm: ["SEND_MESSAGES"],
-  coolDown: 0,
-  dm: true,
-  category: "Fun",
-  help: "Search on Urban Dictionary",
-  args: "",
 }
