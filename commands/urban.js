@@ -1,35 +1,51 @@
-const urban = require('relevant-urban');
-const Discord = require('discord.js');
+const urban = require('urban')
 
-
-exports.run = async (bot, message, args) => {
-
-
-  if (!args[0]) return message.channel.send(`***Please specify some text!***`);
-
-
-
-  let res = await urban(args.join(' ')).catch(e => { 
-
-    return message.channel.send('***Sorry, that word was not found!***');
-  });
-
-
-  const embed = new Discord.RichEmbed()
-    .setColor('RANDOM') 
-    .setTitle(`${res.word}`)
-    .addField('Definition:', `${res.definition}`)
-    .addField('Example:', `${res.example}`)
-    //.setDescription(`**Definition:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`)
-    .setField('Author', `${res.author}`, true)
-    .addField('Rating', `**\`Upvotes: ${res.thumbsUp} | Downvotes: ${res.thumbsDown}\`**`) 
-
-  if (res.tags.length > 0 && res.tags.join(' ').length < 1024) {
-
-    embed.addField('Tags', `res.tags.join(', ')`, true)
+exports.run = async(bot, message, args) => {
+  try {
+    var search = urban(message.suffix);
+  } catch (e) {
+    return send("**There were no results for this search term**");
   }
+  if (!search || !search.first || typeof search.first !== "function") return;
+  search.first(function (json) {
+    if (json) {
+      if (!json.definition || !json.example) return;
+      if (json.definition.length > 1000) json.definition = json.definition.substr(0, 1000);
+      if (json.example.length > 1000) json.example = json.example.substr(0, 1000);
+      message.channel.send("", {
+        "embed": {
+          "title": "**" + message.suffix + "**",
+          "url": json.permalink,
+          "color": 0xD71A75,
+          "author": {
+            "name": "Urban Dictionary",
+            "icon_url": message.guild.iconURL
+          },
+          "fields": [{
+            "name": "**Definition**",
+            "value": json.definition
+          }, {
+            "name": "**Example**",
+            "value": json.example
+          }],
+          "footer": {
+            "text": "Powered By Urban Dictionary",
+            "icon_url": "http://www.extension.zone/wp-content/uploads/2015/11/Urban-Dictionary-logo.png"
+          }
+        }
+      })
+    } else {
+      send("**There were no results for this search term**")
+    }
+  });
+}
 
-
-  message.channel.send(embed);
-
+exports.conf = {
+  userPerm: [],
+  botPerm: ["SEND_MESSAGES"],
+  coolDown: 0,
+  dm: true,
+  category: "Fun",
+  help: "Search on Urban Dictionary",
+  args: "",
 }
