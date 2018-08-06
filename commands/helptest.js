@@ -7,34 +7,34 @@ if (!args[0]) {
     let helpembed = new Discord.RichEmbed()
           .setTitle(`**${bot.user.username}** Commands !`)
           .setColor('#00BFFF')
-          .addField("🐱Animals🐶", "`;!help animals` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
-          .addField("🎭Fun🎲", "`;!help fun` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
-          .addField("😂Reactions😭", "`;!help react` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
-          .addField("😈NSFW🔥", "`;!help nsfw` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
-          .addField("😂Memes👌", "`;!help memes` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)   
-          .addField("👮Moderation🔒", "`;!help mod` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
-          .addField("📷Image🎨", "`;!help image` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true)
-          .addField("🆗Text🈂", "`;!help text` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
-          .addField("⚒Utility⛏", "`;!help utility` \n[Coming Soon](https://www.facebook.com/travolta.youssef.1)", true) 
+          .addField("🐱Animals🐶", "`;!help animals` \n10 Commands available", true) 
+          .addField("🎭Fun🎲", "`;!help fun` \n16 Commands available", true)
+          .addField("😂Reactions😭", "`;!help react` \n9 Commands available", true) 
+          .addField("😈NSFW🔥", "`;!help nsfw` \n11 Commands available", true)
+          .addField("😂Memes👌", "`;!help memes` \n8 Commands available", true)   
+          .addField("👮Moderation🔒", "`;!help mod` \n6 Commands available", true)
+          .addField("📷Image🎨", "`;!help image` \n5 Commands available", true)
+          .addField("🆗Text🈂", "`;!help text` \n3 Commands available", true) 
+          .addField("⚒Utility⛏", "`;!help utility` \n10 Commands available", true) 
           .setFooter(`[${bot.user.username}] Created and Developed by Sally & Travochii.`);
             message.channel.send(helpembed)
             return;
 } if (args[0] === "fun") {
     let funembed = new Discord.RichEmbed()
           .setColor('RANDOM')
-          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate` \n`kill`,`love`,`notice`,`nya`,`potato`,`rem`")
+          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate` \n`kill`,`love`,`notice`,`nya`,`potato`,`rem`,`slot`")
           .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "animals") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("🐱Animals🐶", "`cat`,`dog`,`bunny`,`duck`,`lizard`,`...`,`...`,`...`,`...`")
+            .addField("🐱Animals🐶", "`bird`,cat`,`dog`,`bunny`,`duck`,`fox`,`lizard`,`lion`,`tiger`,`panda`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "nsfw") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`spank`,`tits` \n`trap`")
+            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`loli`,`spank` \n`tits`,`trap`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "memes") {
@@ -72,7 +72,7 @@ if (!args[0]) {
 } else if (args[0] === "utility") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("⚒Utility Commands⛏", "`anime`,`avatar`,`help`,`ping`,`report`,`serverinfo`,`urban`,`userinfo`,`weather`")
+            .addField("⚒Utility Commands⛏", "`anime`,`avatar`,`help`,`ping`,`report`,`serverinfo`,`urban`,`userinfo`,`weather`,`count`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed); 
 }
