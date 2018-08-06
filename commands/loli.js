@@ -12,8 +12,7 @@ module.exports.run = async(bot, message, args) => {
         "https://media2.giphy.com/media/3o6wNPIj7WBQcJCReE/giphy-downsized.gif",
         "https://thumbs.gfycat.com/ImaginativeEarlyCaribou-size_restricted.gif",
         
-        
-      ]
+    ]
       let hugresult = Math.floor((Math.random() * cookie.length));
 
     if (!message.channel.nsfw) return message.reply("🔞 Cannot display NSFW content in a SFW channel.");
@@ -21,7 +20,7 @@ module.exports.run = async(bot, message, args) => {
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle("🚨 FBI Open Up !! 🚔")
-    .setImage(hugresult)
+    .setImage(cookie[hugresult])
     .setColor("RANDOM")
     .setFooter(`Requested by ${message.author.tag}`);
 
