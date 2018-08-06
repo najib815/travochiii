@@ -5,12 +5,13 @@ exports.run = async(bot, message, args) => {
         // Check if user has the permission to use the command.
     if (!message.member.roles.find("name", "🔸️Owners")) {
         return message.channel.send('⚠️ **You need the** \*`Staff*\` **role to use this command.** ⚠️')
-            .then(m => m.delete(5000));
+            .then(m => m.delete(30000));
     }
     // Mention the user that you want to verify
     let toverify = message.guild.member(message.mentions.users.first());
     // Find the role 'Verified User'
-    let verifyrole = message.guild.roles.find(`name`, "Verified User");
+    let verifyrole = message.guild.roles.find(`name`, "Verified User" || "Member");
+    if (!verifyrole) return message.reply('You need to Creat a roll and name it "Verified User"')
     // Check if a user has been mentioned.
     if (!toverify) return message.reply("You need to mention a user.");
     // Add the role to the user if one is mentioned.
