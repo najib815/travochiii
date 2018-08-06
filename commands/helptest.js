@@ -43,12 +43,26 @@ if (!args[0]) {
             .addField("🎭Memey Commands🎲", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
-} else if (args[0] === "react" | "reaction" | "reactions") {
+} else if (args[0] === "react" === "reaction" === "reactions") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .addField("😂 Reactions 😭", "`cry`,`hug`,`kiss`,`lick`,`nom`,`slap`,`stare`,`tickle`,`poke`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
+} else if (args[0] === "mod") {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorry, but you don't have permission to use this!");
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("👮Mod Commands🔒", "`purge`,`rename`,`say`,`verify`,`warn`,`warns`")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed);
 }
-}
-//,``,``,``,``,``,``,``
+//\n,``,``,``,``,``,``,``
+
+
+//else if (args[0] === "..") {
+//    let funembed = new Discord.RichEmbed()
+//            .setColor('RANDOM')
+//            .addField("..", "``,``,``,``,``,``,``,``,``")
+//            .setFooter(`Use ${prefix} before every single Command.`);
+//    message.channel.send(funembed); 
