@@ -1,28 +1,51 @@
 const Discord = require('discord.js');
+const urban = require('relevant-urban');
 
 exports.run = async(bot, message, args, prefix) => {
-  var define = message.content.substring(prefix.length + 5);
-  var urban = require('urban'),
-  define = urban(define);
-  
-  define.first(function(json) {
+    const query = message.content.split(/\s+/g).slice(1).join(" ");
+
+    const defs = await (query.length ? urban(query) : urban.random());
+    let def, total
+
+    if (!defs) {
+        return message.channel.send('No matches found!');
+    }
+
+    if (defs.constructor.name === 'Array') {
+        total = Object.keys(defs).length
+
+        if (!defs || !total) {
+            return message.channel.send('No matches found!');
+        }
+
+        def = defs[1]
+    } else if (defs.constructor.name === 'Definition') {
+        def = defs
+    }
+    const resultMessage = query.length > 0 ?
+            `First result for \`${query}\` on Urban Dictionary:` :
+            `Random definition on Urban Dictionary:`
+            
     try {
-      const embed = new Discord.RichEmbed()
-          .setColor(0xFFB200)
-          .setTimestamp()
-          .addField(`Definition of ${json.word}`, `${json.definition}`)
-          .setFooter(`Made by: ${json.author}`);
-      
-      if (json.example.length > 0) { embed.addField("Example", `${json.example}`); }
-      message.channel.send({embed});
+        const embed = new Discord.RichEmbed()
+            .setTitle(`${defs.word} by ${defs.author}`)
+            .setDescription(defs.definition)
+            .addField('❯\u2000\Example(s)', defs.example ? defs.example : 'N/A')
+            .addField('❯\u2000\Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
+            .addField('❯\u2000\Link', `**${defs.urbanURL}**`)
+            .setColor('#e86222')
+            .setFooter('Urban Dictionary', 'https://a.safe.moe/1fscn.png');
+        return message.channel.send(resultMessage, { embed });
+
+    } catch (err) {
+        const embed = new Discord.RichEmbed()
+            .setTitle(`${defs.word} by ${defs.author}`)
+            .setDescription(defs.definition.split('\n')[0])
+            .addField('❯\u2000\Example(s)', defs.example ? defs.example : 'N/A')
+            .addField('❯\u2000\Rating', `👍\u2000${defs.thumbsUp} | 👎\u2000${defs.thumbsDown}`)
+            .addField('❯\u2000\Link', `**${defs.urbanURL}**`)
+            .setColor('#e86222')
+            .setFooter('Urban Dictionary', 'https://a.safe.moe/1fscn.png');
+        return message.channel.send(resultMessage, { embed });
     }
-    catch (err) {
-      var reason = args.join(' ');
-      const embed1 = new Discord.RichEmbed()
-        .setColor(0xFFB200)
-        .setTimestamp()
-        .addField(`:(`, `I couldn't find the definition of **${reason}.**`);
-      message.channel.send({embed: embed1});
-    }
-  });
 }
