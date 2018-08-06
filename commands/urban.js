@@ -4,7 +4,7 @@ exports.run = async(bot, message, args) => {
   try {
     var search = urban(message.suffix);
   } catch (e) {
-    return send("**There were no results for this search term**");
+    return message.channel.send("**There were no results for this search term**");
   }
   if (!search || !search.first || typeof search.first !== "function") return;
   search.first(function (json) {
@@ -35,7 +35,7 @@ exports.run = async(bot, message, args) => {
         }
       })
     } else {
-      send("**There were no results for this search term**")
+      message.channel.send("**There were no results for this search term**")
     }
   });
 }
