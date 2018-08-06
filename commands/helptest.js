@@ -43,7 +43,7 @@ if (!args[0]) {
             .addField("🎭Memey Commands🎲", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
-} else if (args[0] === 'react' === 'reaction' === 'reactions') {
+} else if (args[0] === "react") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .addField("😂 Reactions 😭", "`cry`,`hug`,`kiss`,`lick`,`nom`,`slap`,`stare`,`tickle`,`poke`")
