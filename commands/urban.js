@@ -18,7 +18,6 @@ exports.run = async (bot, message, args) => {
   const embed = new Discord.RichEmbed()
     .setColor('RANDOM') 
     .setTitle(`res.word`)
-    .setUrl(`res.urbanURL`) 
     .setDescription(`**Definition:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`)
     .setField('Author', `res.author`, true)
     .addField('Rating', `**\`Upvotes: ${res.thumbsUp} | Downvotes: ${res.thumbsDown}\`**`) 
