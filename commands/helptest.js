@@ -40,7 +40,7 @@ if (!args[0]) {
 } else if (args[0] === "memes") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("🎭Memey Commands🎲", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`")
+            .addField("😂Memey Commands👌", "`changemymind`,`joke`,`meme`,`net`,`owo`,`respect`,`trump`,`tweet`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "react") {
@@ -54,8 +54,27 @@ if (!args[0]) {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .addField("👮Mod Commands🔒", "`purge`,`rename`,`say`,`verify`,`warn`,`warns`")
+            .addField("⚠️ Note:", 'To use verify command and make it works perfectly u have to follow these instructions : \n**1**-Creat a new roll and name it "Need Verification" . \n**2**-Creat a new channel and name it "log_channel" better make it private. \n**3**-Creat another roll ,name it "Verified User" . \nIf you need help, feel free to join our [server](https://discord.gg/bP3hZJ4)')
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
+} else if (args[0] === "image") {
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("📷Image Editing🎨", "`captcha`,`death`,`kidnap`,`suicide`,`trigger`")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed); 
+} else if (args[0] === "text") {
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("🆗Text Editing🈂", "`ascii`,`clap`,`emojify`")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed); 
+} else if (args[0] === "utility") {
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("⚒Utility Commands⛏", "`anime`,`avatar`,`help`,`ping`,`report`,`serverinfo`,`urban`,`userinfo`,`weather`")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed); 
 }
 }
 //\n,``,``,``,``,``,``,``
@@ -67,4 +86,5 @@ else if (args[0] === "..") {
             .addField("..", "``,``,``,``,``,``,``,``,``")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed); 
+}
     */
