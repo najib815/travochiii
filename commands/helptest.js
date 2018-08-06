@@ -57,12 +57,14 @@ if (!args[0]) {
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 }
+}
 //\n,``,``,``,``,``,``,``
 
-
-//else if (args[0] === "..") {
-//    let funembed = new Discord.RichEmbed()
-//            .setColor('RANDOM')
-//            .addField("..", "``,``,``,``,``,``,``,``,``")
-//            .setFooter(`Use ${prefix} before every single Command.`);
-//    message.channel.send(funembed); 
+/*
+else if (args[0] === "..") {
+    let funembed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .addField("..", "``,``,``,``,``,``,``,``,``")
+            .setFooter(`Use ${prefix} before every single Command.`);
+    message.channel.send(funembed); 
+    */
