@@ -59,10 +59,10 @@ guild.channels.forEach((channel) => {
     let embed = new Discord.RichEmbed()
     .setColor(0x6441A4)
     .setDescription(`Hello, I'm **${bot.user.username}** Created and Developed by Sally & Travochii. Thanks for inviting me. \nIf you have any questions/suggestions or you need help feel free to join our [Discord Server](https://discord.gg/bP3hZJ4) \nOr add us on Discord : `)
-    .addField("👩‍ Sally 🌸", '**S Marokkanskiy#4965**', true)
-    .addField("👨‍ Travo 💛", '**N Travolta#9098**')
-    .addField("Usage :", `Prefix "${prefix}"`, true)   
-    .addField("Commands :", `${prefix}help for commands list`)     
+    .addField("👩‍ Sally 🌸", '**S Marokkanskiy#4965**')
+    .addField("👨‍ Travo 💛", '**N Travolta#9098**', true)
+    .addField("Usage :", `Prefix "${prefix}"`)   
+    .addField("Commands :", `${prefix}help for commands list`, true)     
     .setFooter("Calm Bot created and developed by S Marokkanskiy#4965 & N Travolta#9098");
 defaultChannel.send(embed);
 });
