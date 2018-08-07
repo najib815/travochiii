@@ -15,8 +15,10 @@ if (!args[0]) {
           .addField("👮Moderation🔒", "`;!help mod` \n6 Commands available", true)
           .addField("📷Image🎨", "`;!help image` \n5 Commands available", true)
           .addField("🆗Text🈂", "`;!help text` \n3 Commands available", true) 
-          .addField("⚒Utility⛏", "`;!help utility` \n10 Commands available", true) 
-          .setFooter(`[${bot.user.username}] Created and Developed by Sally & Travochii.`);
+          .addField("⚒Utility⛏", "`;!help utility` \n10 Commands available", true)
+          .addBlankField() 
+          .addField(`\u2000`, "If you need more help, feel free to join our Discord [server](https://discord.gg/bP3hZJ4)")
+          .setFooter(`${bot.user.username} Created and Developed by Sally & Travochii.`);
             message.channel.send(helpembed)
             return;
 } if (args[0] === "fun") {
@@ -54,7 +56,7 @@ if (!args[0]) {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .addField("👮Mod Commands🔒", "`purge`,`rename`,`say`,`verify`,`warn`,`warns`")
-            .addField("⚠️ Note:", 'To use verify command and make it works perfectly u have to follow these instructions : \n**1**-Creat a new roll and name it "Need Verification" . \n**2**-Creat a new channel and name it "log_channel" better make it private. \n**3**-Creat another roll ,name it "Verified User" . \nIf you need help, feel free to join our [server](https://discord.gg/bP3hZJ4)')
+            .addField("⚠️ Note:", 'To use verify command and make it works perfectly u have to follow these instructions : \n**1**-Creat a new roll and name it "Need Verification" . \n**2**-Creat a new channel and name it "log_channel" better make it private. \n**3**-Creat another roll ,name it "Verified User" . \nIf you need more help, feel free to join our [server](https://discord.gg/bP3hZJ4)')
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "image") {
