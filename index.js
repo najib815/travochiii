@@ -4,7 +4,7 @@ const prefix = ';!';
 const db = require('quick.db');
 //const fetch = require('snekfetch');
 const fs = require("fs");
-const xp = require('./xp.json');
+let xp = JSON.parse(fs.readFileSync('./xp.json', 'utf8'));
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 const games = require("./games.json");
 
