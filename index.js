@@ -4,7 +4,7 @@ const prefix = ';!';
 const db = require('quick.db');
 //const fetch = require('snekfetch');
 const fs = require("fs");
-let xp = JSON.parse(fs.readFileSync('./xp.json', 'utf8'));
+let xp = require('./xp.json');
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 const games = require("./games.json");
 
@@ -16,7 +16,11 @@ bot.on('message', message => {
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase(); 
-
+    if (message.isMentioned(bot.user)) {
+          message.channel.send("yes?");
+    }
+    if (sender.bot) return;
+	
     let xpAdd = Math.floor(Math.random() * 7) + 8;
   console.log(xpAdd);
 
@@ -46,10 +50,7 @@ bot.on('message', message => {
 });	
 	
  
-    if (message.isMentioned(bot.user)) {
-          message.channel.send("yes?");
-    }
-    if (sender.bot) return;
+
     if (!message.content.startsWith(prefix)) return; 
 
     
