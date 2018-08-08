@@ -4,6 +4,7 @@ const prefix = ';!';
 const db = require('quick.db');
 //const fetch = require('snekfetch');
 const fs = require("fs");
+const xp = JSON.parse(fs.readFileSync('./xp.json', 'utf8'));
 const commands = JSON.parse(fs.readFileSync('util/commands.json', 'utf8'));
 const games = require("./games.json");
 
@@ -16,6 +17,35 @@ bot.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase(); 
 
+    let xpAdd = Math.floor(Math.random() * 7) + 8;
+  console.log(xpAdd);
+
+  if(!xp[message.author.id]){
+    xp[message.author.id] = {
+      xp: 0,
+      level: 1
+    };
+  }
+
+
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvl = xp[message.author.id].level * 300;
+  xp[message.author.id].xp =  curxp + xpAdd;
+  if(nxtLvl <= xp[message.author.id].xp){
+    xp[message.author.id].level = curlvl + 1;
+    let lvlup = new Discord.RichEmbed()
+    .setTitle("Level Up!")
+    .setColor('RRANDOM')
+    .addField("New Level", curlvl + 1);
+
+    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
+  }
+  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+    if(err) console.log(err)
+});	
+	
+ 
     if (message.isMentioned(bot.user)) {
           message.channel.send("yes?");
     }
