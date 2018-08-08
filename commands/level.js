@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let xp = require("./xp.json");
+let xp = require("JSON/xp.json");
 
 module.exports.run = async(bot, message, args) => {
 
