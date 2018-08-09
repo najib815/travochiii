@@ -11,7 +11,9 @@ if (!color) {
                 .setImage(`https://dummyimage.com/150x70/${genColour.slice(1)}/&text=%20`)
                 .setFooter(genColour);
             return message.channel.send('Here\'s your color!', { embed: embed });
+            message.react("✅");
 }
+            if (message.author.react("✅")) return message.channel.send("Hi !");
             let num = message.guild.roles.find(`name`, "TravochiiBot");
             let colorole = await message.guild.createRole({
                 name: 'CBOT-' + RUser.id,
