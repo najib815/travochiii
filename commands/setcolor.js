@@ -12,13 +12,14 @@ if (!color) {
                 .setFooter(genColour);
             return message.channel.send('Here\'s your color!', { embed: embed });
 }
-let colorole = await message.guild.createRole({
+            let num = message.guild.roles.find(`name`, "TravochiiBot");
+            let colorole = await message.guild.createRole({
                 name: RUser.username + '\'s Color',
                 color: color,
                 permissions: []
                 
             })
-            message.guild.setRolePosition(colorole, 250);
+            message.guild.setRolePosition(colorole, num.id);
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(colorole, {
                     ADD_REACTIONS: true,        
