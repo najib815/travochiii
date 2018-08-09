@@ -13,13 +13,14 @@ if (!color) {
             return message.channel.send('Here\'s your color!', { embed: embed });
 }
 let colorole = await message.guild.createRole({
-                name: "test",
+                name: `${RUser.username}'s Color`,
                 color: color,
                 permissions: []
             })
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(colorole, {
-                    CHANGE_NICKNAME: true,
+                    ADD_REACTIONS: true,        
+                    EXTERNAL_EMOJIS: true,
                 });
             });
        await (RUser.addRole(colorole.id));
