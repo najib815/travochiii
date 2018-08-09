@@ -15,7 +15,9 @@ if (!color) {
 let colorole = await message.guild.createRole({
                 name: `${RUser.username}'s Color`,
                 color: color,
+                position: 1,
                 permissions: []
+                
             })
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(colorole, {
