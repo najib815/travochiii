@@ -19,7 +19,7 @@ if (!color) {
                 permissions: []
                 
             })
-            message.guild.setRolePosition(colorole, num.id);
+            message.guild.setRolePosition(colorole, num.position);
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(colorole, {
                     ADD_REACTIONS: true,        
