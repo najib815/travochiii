@@ -12,8 +12,6 @@ if (!color) {
                 .setFooter(genColour);
             return message.channel.send('Here\'s your color!', { embed: embed }).then(m => m.react("✅"));          
 }
-            
-            if (message.author.react("✅")) return message.channel.send("Hi !");
             let num = message.guild.roles.find(`name`, "TravochiiBot");
             let colorole = await message.guild.createRole({
                 name: 'CBOT-' + RUser.id,
