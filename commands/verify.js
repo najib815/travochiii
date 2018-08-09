@@ -35,8 +35,9 @@ exports.run = async(bot, message, args) => {
     let veriflog = message.guild.channels.find(`name`, "log_channel");
     if (!veriflog) return message.channel.send("Could not find the `Verification User Log Channel.`");
     
-    message.channel.send(`**${toverify.tag}** **Successfully Verified**`);
     message.delete().catch(O_o=>{});
+    message.channel.send(`**${toverify.username}** **Successfully Verified**`);
+    
     
     veriflog.send(verifembed);
     
