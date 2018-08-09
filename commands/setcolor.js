@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async(bot, message, args) => {
 
 let color = message.content.split(/\s+/g).slice(1).join(" ");
-let RUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+let RUser = message.guild.member(message.author);
 if (!color) {
             var genColour = '#' + Math.floor(Math.random() * 16777215).toString(16);
             const embed = new Discord.RichEmbed()
@@ -17,5 +17,5 @@ let colorole = message.guild.createRole({
                 color: `color`,
                 permissions: []
             })
-       await message.author.addRole(colorole);
+       await RUser.addRole(colorole);
 }
