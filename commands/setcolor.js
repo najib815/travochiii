@@ -18,7 +18,7 @@ let colorole = await message.guild.createRole({
                 permissions: []
                 
             })
-            message.guild.setRolePosition(colorole, 7, true);
+            message.guild.setRolePosition(colorole, 100);
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(colorole, {
                     ADD_REACTIONS: true,        
