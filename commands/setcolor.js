@@ -15,7 +15,6 @@ if (!color) {
 let colorole = await message.guild.createRole({
                 name: `${RUser.username}'s Color`,
                 color: color,
-                position: 1,
                 permissions: []
                 
             })
