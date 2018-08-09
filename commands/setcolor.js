@@ -14,7 +14,7 @@ if (!color) {
 }
 let colorole = await message.guild.createRole({
                 name: "test",
-                color: "#000000",
+                color: color,
                 permissions: []
             })
             message.guild.channels.forEach(async (channel, id) => {
