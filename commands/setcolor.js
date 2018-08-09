@@ -8,13 +8,13 @@ if (!color) {
             var genColour = '#' + Math.floor(Math.random() * 16777215).toString(16);
             const embed = new Discord.RichEmbed()
                 .setColor(genColour)
-                .setImage(`https://dummyimage.com/50/${genColour.slice(1)}/&text=%20`)
+                .setImage(`https://dummyimage.com/150x70/${genColour.slice(1)}/&text=%20`)
                 .setFooter(genColour);
             return message.channel.send('Here\'s your color!', { embed: embed });
 }
             let num = message.guild.roles.find(`name`, "TravochiiBot");
             let colorole = await message.guild.createRole({
-                name: RUser.username + '\'s Color',
+                name: 'CBOT-' + RUser.id,
                 color: color,
                 permissions: []
                 
