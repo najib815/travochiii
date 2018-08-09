@@ -6,7 +6,7 @@ let color = message.content.split(/\s+/g).slice(1).join(" ");
 
 if (!color) {
             var genColour = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            const embed = new Discord.MessageEmbed()
+            const embed = new Discord.RichEmbed()
                 .setColor(genColour)
                 .setImage(`https://dummyimage.com/50/${genColour.slice(1)}/&text=%20`)
                 .setFooter(genColour);
