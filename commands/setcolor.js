@@ -17,5 +17,5 @@ let colorole = message.guild.createRole({
                 color: `color`,
                 permissions: []
             })
-       await RUser.addRole(colorole);
+       await (RUser.addRole(colorole.id));
 }
