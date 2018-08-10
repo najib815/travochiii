@@ -24,7 +24,7 @@ if (!args[0]) {
 } if (args[0] === "fun") {
     let funembed = new Discord.RichEmbed()
           .setColor('RANDOM')
-          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate` \n`kill`,`love`,`notice`,`nya`,`potato`,`rem`,`slots`")
+          .addField("🎭Fun Commands🎲", "`1v1`,`8ball`,`burn`,`cookie`,`cute`,`girl`,`feed`,`fmk`,`gayrate` \n`kill`,`love`,`notice`,`nya`,`potato`,`rem`,`slots`,`waifurate`")
           .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "animals") {
