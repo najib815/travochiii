@@ -16,8 +16,8 @@ if (!args[0]) {
           .addField("📷Image🎨", "`;!help image` \n5 Commands available", true)
           .addField("🆗Text🈂", "`;!help text` \n3 Commands available", true) 
           .addField("⚒Utility⛏", "`;!help utility` \n10 Commands available", true)
-          .addBlankField() 
-          .addField(`\u2000`, "If you need more help, feel free to join our Discord [server](https://discord.gg/bP3hZJ4)")
+          //.addBlankField() 
+          //.addField(`\u2000`, "If you need more help, feel free to join our Discord [server](https://discord.gg/bP3hZJ4)")
           .setFooter(`${bot.user.username} Created and Developed by Sally & Travochii.`);
             message.channel.send(helpembed)
             return;
