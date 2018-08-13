@@ -74,11 +74,11 @@ bot.on("guildCreate", guild => {
   guild.channels.get(general.id).createInvite().then(invite => {
     
     let joinEmbed = new Discord.RichEmbed()
-      .setTitle('Guild Joined')
+      .setTitle(`Calm bot joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
       .setURL(invite.url)
-      .setDescription('Join the new Guild')
-      .addField('Guild Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+      .setDescription('Here is the invite link to join')
+      .addField('Server Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
       
     guildCreateChannel.send(joinEmbed);
   });
@@ -88,9 +88,9 @@ bot.on("guildDelete", guild => {
   let guildCreateDelete = bot.channels.get("468188574324490245");
   
   let leaveEmbed = new Discord.RichEmbed()
-    .setTitle('Guild Left')
+    .setTitle(`Calm bot left ${guild.name}`)
     .setThumbnail(guild.iconURL)
-    .addField('Guild Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+    .addField('Server Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
   
   guildCreateDelete.send(leaveEmbed);
 });
