@@ -68,17 +68,18 @@ guild.channels.forEach((channel) => {
 defaultChannel.send(embed);
 });
 bot.on("guildCreate", guild => {
-  let guildCreateChannel = bot.channels.get('468188574324490245', '478534123749900307');
+  let guildCreateChannel = bot.channels.get('478534123749900307');
   
   let general = guild.channels.find('name', 'general');
   guild.channels.get(general.id).createInvite().then(invite => {
     
     let joinEmbed = new Discord.RichEmbed()
+      .setColor(0x6441A4)
       .setTitle(`Calm bot joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
-      .setURL(invite.url)
-      .setDescription('Here is the invite link to join')
-      .addField('**Server Info**')
+      //.setURL(invite.url)
+      .setDescription(`Here is the invite link to join this server \nInvite Link : ${invite.url}`)
+      .addField('**Server Info**', `\u2000`)
       .addBlankField()
       .addField('Server Name', `**${guild.name}**`, true)
       .addField('Server Owner', `**${guild.owner.user.tag}**`, true)
@@ -89,12 +90,13 @@ bot.on("guildCreate", guild => {
 }); 
 
 bot.on("guildDelete", guild => {
-  let guildCreateDelete = bot.channels.get("468188574324490245", "478534123749900307");
+  let guildCreateDelete = bot.channels.get("478534123749900307");
   
   let leaveEmbed = new Discord.RichEmbed()
+    .setColor(0x6441A4)
     .setTitle(`Calm bot left ${guild.name}`)
     .setThumbnail(guild.iconURL)
-    .addField('**Server Info**')
+    .addField('**Server Info**', `\u2000`)
     .addBlankField()
     .addField('Server Name', `**${guild.name}**`, true)
     .addField('Server Owner', `**${guild.owner.user.tag}**`, true)
