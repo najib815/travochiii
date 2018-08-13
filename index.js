@@ -79,7 +79,7 @@ guild.channels.forEach((channel) => {
 defaultChannel.send(embed);
 });
 bot.on("guildCreate", guild => {
-  let guildCreateChannel = bot.channels.get('478534123749900307');
+  let guildCreateChannel = bot.channels.get("478534123749900307");
   
   let general = guild.channels.find('name', 'general');
   guild.channels.get(general.id).createInvite().then(invite => {
