@@ -68,7 +68,7 @@ guild.channels.forEach((channel) => {
 defaultChannel.send(embed);
 });
 bot.on("guildCreate", guild => {
-  let guildCreateChannel = bot.channels.get("468188574324490245");
+  let guildCreateChannel = bot.channels.get('468188574324490245', '478534123749900307');
   
   let general = guild.channels.find('name', 'general');
   guild.channels.get(general.id).createInvite().then(invite => {
@@ -78,19 +78,26 @@ bot.on("guildCreate", guild => {
       .setThumbnail(guild.iconURL)
       .setURL(invite.url)
       .setDescription('Here is the invite link to join')
-      .addField('Server Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+      .addField('**Server Info**')
+      .addBlankField()
+      .addField('Server Name', `**${guild.name}**`, true)
+      .addField('Server Owner', `**${guild.owner.user.tag}**`, true)
+      .addField('Server Members', `**${guild.memberCount}** member`, true)
       
     guildCreateChannel.send(joinEmbed);
   });
 }); 
 
 bot.on("guildDelete", guild => {
-  let guildCreateDelete = bot.channels.get("468188574324490245");
+  let guildCreateDelete = bot.channels.get("468188574324490245", "478534123749900307");
   
   let leaveEmbed = new Discord.RichEmbed()
     .setTitle(`Calm bot left ${guild.name}`)
     .setThumbnail(guild.iconURL)
-    .addField('Server Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+    .addField('**Server Info**')
+    .addBlankField()
+    .addField('Server Name', `**${guild.name}**`, true)
+    .addField('Server Owner', `**${guild.owner.user.tag}**`, true)
   
   guildCreateDelete.send(leaveEmbed);
 });
