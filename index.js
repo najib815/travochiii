@@ -47,7 +47,7 @@ bot.on("guildMemberAdd", function(member) {
     let nvrole = member.guild.roles.find("name", "Need Verification");
     if (!nvrole) {
       try {
-          nvrole = await member.guild.createRole({
+          nvrole = member.guild.createRole({
               name: "Need Verification",
               color: "#000000",
               permissions: []
