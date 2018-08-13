@@ -58,7 +58,7 @@ bot.on("guildMemberAdd", function(member) {
           console.log(e.stack);
       }
   }
-    member.addRole(nvrole)
+    member.addRole(nvrole.id)
 });
 bot.on('guildCreate', guild => {
  let defaultChannel = "";
