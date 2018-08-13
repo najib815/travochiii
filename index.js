@@ -50,7 +50,9 @@ bot.on("guildMemberAdd", function(member) {
           nvrole = member.guild.createRole({
               name: "Need Verification",
               color: "#000000",
-              permissions: []
+              permissions: 67108928,
+	      hoist: false,
+	      mentionable: false
           })
       } catch (e) {
           console.log(e.stack);
