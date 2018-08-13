@@ -44,8 +44,19 @@ bot.on('ready', () => {
     //bot.user.setPresence({ game: { name: `Dev by Sally & Travo`, url: 'https://www.twitch.tv/najib815', type: 1 } });
 })
 bot.on("guildMemberAdd", function(member) {
-    let role = member.guild.roles.find("name", "Need Verification");
-    member.addRole(role).catch(console.error);
+    let nvrole = member.guild.roles.find("name", "Need Verification");
+    if (!nvrole) {
+      try {
+          nvrole = await member.guild.createRole({
+              name: "Need Verification",
+              color: "#000000",
+              permissions: []
+          })
+      } catch (e) {
+          console.log(e.stack);
+      }
+  }
+    member.addRole(nvrole)
 });
 bot.on('guildCreate', guild => {
  let defaultChannel = "";
