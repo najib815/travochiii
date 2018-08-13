@@ -67,5 +67,32 @@ guild.channels.forEach((channel) => {
     .setFooter("Calm Bot created and developed by S Marokkanskiy#4965 & N Travolta#9098");
 defaultChannel.send(embed);
 });
+bot.on("guildCreate", guild => {
+  let guildCreateChannel = bot.channels.get("468188574324490245");
+  
+  let general = guild.channels.find('name', 'general');
+  guild.channels.get(general.id).createInvite().then(invite => {
+    
+    let joinEmbed = new Discord.RichEmbed()
+      .setTitle('Guild Joined')
+      .setThumbnail(guild.iconURL)
+      .setURL(invite.url)
+      .setDescription('Join the new Guild')
+      .addField('Guild Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+      
+    guildCreateChannel.send(joinEmbed);
+  });
+}); 
+
+bot.on("guildDelete", guild => {
+  let guildCreateDelete = bot.channels.get("468188574324490245");
+  
+  let leaveEmbed = new Discord.RichEmbed()
+    .setTitle('Guild Left')
+    .setThumbnail(guild.iconURL)
+    .addField('Guild Info', `Name: **${guild.name}** \nID: **${guild.id}**`)
+  
+  guildCreateDelete.send(leaveEmbed);
+});
 
 bot.login(process.env.TOKEN);
