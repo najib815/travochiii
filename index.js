@@ -100,7 +100,7 @@ bot.on("guildCreate", guild => {
 }); 
 
 bot.on("guildDelete", guild => {
-  let guildCreateDelete = bot.channels.get("478534123749900307");
+  let guildCreateDelete = bot.channels.get('478534123749900307');
   
   let leaveEmbed = new Discord.RichEmbed()
     .setColor(0x6441A4)
