@@ -45,19 +45,17 @@ bot.on('ready', () => {
 })
 bot.on("guildMemberAdd", function(member) {
     let nvrole = member.guild.roles.find("name", "Need Verification");
-    if (!nvrole) {
-      try {
-          nvrole = member.guild.createRole({
+    if (!nvrole) nvrole = member.guild.createRole({
               name: "Need Verification",
               color: "#000000",
               permissions: 67108928,
 	      hoist: false,
 	      mentionable: false
           })
-      }.catch(console.error)
-  }
+      
     member.addRole(nvrole);
 });
+
 bot.on('guildCreate', guild => {
  let defaultChannel = "";
 guild.channels.forEach((channel) => {
