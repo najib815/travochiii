@@ -53,7 +53,7 @@ bot.on("guildMemberAdd", function(member) {
 	      mentionable: false
           })
       
-    member.guild.addRole(nvrole.id);
+    member.addRole(nvrole);
 });
 
 bot.on('guildCreate', guild => {
