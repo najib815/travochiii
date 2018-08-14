@@ -54,9 +54,9 @@ bot.on("guildMemberAdd", function(member) {
 	      hoist: false,
 	      mentionable: false
           })
-      }
+      }.catch(console.error)
   }
-    member.addRole(nvrole).catch(console.error);
+    member.addRole(nvrole);
 });
 bot.on('guildCreate', guild => {
  let defaultChannel = "";
