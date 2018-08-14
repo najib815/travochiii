@@ -45,7 +45,8 @@ bot.on('ready', () => {
 })
 bot.on("guildMemberAdd", function(member) {
     let nvrole = member.guild.roles.find("name", "Need Verification");
-    if (!nvrole) {
+    if (!nvrole) return;
+    /* {
       try {
           nvrole = member.guild.createRole({
               name: "Need Verification",
@@ -56,6 +57,7 @@ bot.on("guildMemberAdd", function(member) {
           console.log(e.stack);
       }
   }
+  */
     member.addRole(nvrole)
 });
 bot.on('guildCreate', guild => {
