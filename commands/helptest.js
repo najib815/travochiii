@@ -17,7 +17,7 @@ if (!args[0]) {
           .addField("🆗Text🈂", "`;!help text` \n3 Commands available", true) 
           .addField("⚒Utility⛏", "`;!help utility` \n10 Commands available", true)
           //.addBlankField() 
-          //.addField(`\u2000`, "If you need more help, feel free to join our Discord [server](https://discord.gg/bP3hZJ4)")
+          //.addField(`\u2000`, "If you need more help, feel free to join our Discord Support [Server](https://discord.gg/bP3hZJ4)")
           .setFooter(`${bot.user.username} Created and Developed by Sally & Travochii.`);
             message.channel.send(helpembed)
             return;
@@ -36,7 +36,7 @@ if (!args[0]) {
 } else if (args[0] === "nsfw") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`loli`,`spank` \n`tits`,`trap`")
+            .addField("😈NSFW Commands🔥", "`ahegao`,`boobs`,`feet`,`fuck`,`hanal`,`hcum`,`hentai`,`loli`,`spank` \n`tits`,`trap`,`pgif`,`4k`,`anal`,`pussy`,`ass`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed);
 } else if (args[0] === "memes") {
