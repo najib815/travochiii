@@ -74,7 +74,7 @@ if (!args[0]) {
 } else if (args[0] === "utility") {
     let funembed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .addField("⚒Utility Commands⛏", "`anime`,`avatar`,`help`,`ping`,`report`,`serverinfo`,`urban`,`userinfo`,`weather`,`count`")
+            .addField("⚒Utility Commands⛏", "`anime`,`avatar`,`count`,`help`,`ping`,`invite`,`report`,`serverinfo`,`urban`,`userinfo`,`weather`")
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed); 
 }
@@ -89,4 +89,5 @@ else if (args[0] === "..") {
             .setFooter(`Use ${prefix} before every single Command.`);
     message.channel.send(funembed); 
 }
+
     */
