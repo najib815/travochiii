@@ -17,6 +17,6 @@ var phrase = phrases[Math.round(Math.random() * (phrases.length - 1))];
 	const embed = new Discord.RichEmbed()
     	.setColor(0xFFB200)
     	.setTimestamp()
-    	.setDescription(`[${phrase}](https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=1043721303)`);
+    	.setDescription(`[${phrase}](https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=2146954737)`);
    	message.channel.send({embed});
 }
