@@ -5,7 +5,7 @@ exports.run = async(bot, message, args, prefix) => {
     
 if (!args[0]) {
     let helpembed = new Discord.RichEmbed()
-          .setTitle(`**${bot.user.username}** Commands !`)
+          .setTitle(`${bot.user.username} Commands !`)
           .setColor('#00BFFF')
           .addField("🐱Animals🐶", "`;!help animals` \n10 Commands available", true) 
           .addField("🎭Fun🎲", "`;!help fun` \n17 Commands available", true)
