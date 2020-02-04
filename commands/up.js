@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     //.setTitle("Real Anal Gifs")
-    .addField(body.message)
+    .setDescription(body.message)
     .setColor("RANDOM")
     .setFooter(`Requested by ${message.author.tag} | CalmBot`);
 
