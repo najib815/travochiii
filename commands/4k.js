@@ -4,13 +4,15 @@ const superagent = require("superagent");
 module.exports.run = async(bot, message, args) => {
     
     let {body} = await superagent
-    .get(`https://nekobot.xyz/api/image?type=4k`);
-    if (!message.channel.nsfw) return message.reply(" You must be in a N.S.F.W channel to use this command.");
+    let key = args[0];
+    let country = args[1];
+    .get(`https://spoty.gg/api/v1/?action=upgrade&key=${key}&country=${country}`);
+    
   
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("4K Porn Pictures")
-    .setImage(body.message)
+    //.setTitle("Real Anal Gifs")
+    .setDescription(body.message)
     .setColor("RANDOM")
     .setFooter(`Requested by ${message.author.tag} | CalmBot`);
 
